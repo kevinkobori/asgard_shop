@@ -44,6 +44,7 @@ class App extends StatelessWidget {
           child: StateProvider<AccountState, AccountNotifier>(
             create: (context) => AccountNotifier.demo(),
             child: AppBase(
+              debugShowCheckedModeBanner: false,
               colorMode: AppThemeColorMode.light,
               appLogo: ExactAssetPicture(
                 SvgPicture.svgStringDecoderBuilder,
