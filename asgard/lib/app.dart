@@ -3,7 +3,6 @@ import 'package:asgard/features/cart/state.dart';
 import 'package:asgard/features/catalog/view.dart';
 import 'package:asgard/features/notifications/state.dart';
 import 'package:asgard_core/asgard_core.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
@@ -27,7 +26,7 @@ class App extends StatelessWidget {
         pageBuilder: (context, state) => TransparentPage<void>(
           key: state.pageKey,
           child: ProductDetailView(
-            productId: state.params['id']!,
+            productId: state.pathParameters['id']!,
           ),
         ),
       ),
