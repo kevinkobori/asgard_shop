@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:asgard_core/asgard_core.dart';
 import 'package:widgetbook2/widgetbook2.dart';
 
 void main() {
@@ -20,15 +20,9 @@ class HotreloadWidgetbook extends StatelessWidget {
               useCases: [
                 WidgetbookUseCase(
                   name: 'elevated',
-                  builder: (context) => ElevatedButton(
-                    onPressed: () {},
-                    child: Text(
-                      context.knobs
-                          .number(
-                            label: 'hello',
-                          )
-                          .toString(),
-                    ),
+                  builder: (context) => AppButton(
+                    onTap: () {},
+                    title: context.knobs.text(label: 'label'),
                   ),
                 ),
               ],
@@ -37,14 +31,14 @@ class HotreloadWidgetbook extends StatelessWidget {
         )
       ],
       themes: [
-        WidgetbookTheme(
-          name: 'Light',
-          data: ThemeData.light(),
-        ),
-        WidgetbookTheme(
-          name: 'Dark',
-          data: ThemeData.dark(),
-        ),
+        // WidgetbookTheme( // TODO: NOW
+        //   name: 'Light',
+        //   data: ThemeData.light(),
+        // ),
+        // WidgetbookTheme( // TODO: NOW
+        //   name: 'Dark',
+        //   data: ThemeData.dark(),
+        // ),
       ],
       appInfo: AppInfo(name: 'Example'),
     );
