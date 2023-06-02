@@ -1,8 +1,6 @@
 import 'package:asgard_core/asgard_core.dart';
 import 'package:equatable/equatable.dart';
 
-import 'buttons/action_button.dart';
-
 class AppNotification extends Equatable {
   const AppNotification({
     required this.title,

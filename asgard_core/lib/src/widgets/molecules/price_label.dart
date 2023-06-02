@@ -1,7 +1,7 @@
 import 'package:asgard_core/src/theme/theme.dart';
 import 'package:flutter/widgets.dart';
 
-import 'base/base.dart';
+import '../atoms/atoms.dart';
 
 class PriceLabel extends StatelessWidget {
   const PriceLabel(

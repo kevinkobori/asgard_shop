@@ -5,17 +5,34 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "asgard",
-            "cwd": "asgard",
+            "name": "Asgard",
+            "type": "dart",
+            // "cwd": "asgard",
             "request": "launch",
-            "type": "dart"
+            "program": "asgard/lib/main.dart",
         },
         {
-            "name": "asgard (profile mode)",
-            "cwd": "asgard",
-            "request": "launch",
+            "name": "Asgard for Web",
             "type": "dart",
-            "flutterMode": "profile"
-        }
+            "request": "launch",
+            "program": "asgard/lib/main.dart",
+            "args": [
+              "-d",
+              "chrome"
+            ]
+          },
+        // {
+        //     "name": "asgard (profile mode)",
+        //     "cwd": "asgard",
+        //     "request": "launch",
+        //     "type": "dart",
+        //     "flutterMode": "profile"
+        // },
+        {
+			"name": "Asgard StoryBook",
+			"type": "dart",
+			"request": "launch",
+			"program": "storybook/lib/main.dart"
+		},
     ]
 }
