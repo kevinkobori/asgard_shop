@@ -1,7 +1,7 @@
 import 'package:asgard_core/asgard_core.dart';
 import 'package:asgard_core/src/theme/data/form_factor.dart';
 import 'package:asgard_core/src/utils/named.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as material;
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'base.dart';
@@ -25,7 +25,7 @@ class AppThemeLibrary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return material.MaterialApp(
       debugShowCheckedModeBanner: false,
       home: AppResponsiveTheme(
         appLogo: StringPicture(
