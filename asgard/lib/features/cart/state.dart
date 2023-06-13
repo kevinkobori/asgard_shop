@@ -18,7 +18,7 @@ class CartState extends Equatable {
         items: [
           CartItem(
             quantity: 2,
-            product: Product(
+            product: ProductEntity(
               id: '002',
               image: 'https://picsum.photos/id/20/200/300',
               name: 'Viktar',
@@ -30,7 +30,7 @@ class CartState extends Equatable {
           ),
           CartItem(
             quantity: 1,
-            product: Product(
+            product: ProductEntity(
               id: '003',
               image: 'https://picsum.photos/id/30/200/300',
               name: 'Jvynir',
@@ -56,7 +56,7 @@ class CartItem extends Equatable {
     required this.product,
     required this.quantity,
   });
-  final Product product;
+  final ProductEntity product;
   final int quantity;
 
   @override

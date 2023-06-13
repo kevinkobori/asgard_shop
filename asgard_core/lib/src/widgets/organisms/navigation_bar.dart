@@ -1,7 +1,7 @@
 import 'package:asgard_core/asgard_core.dart';
 
-class AppNavigationBar extends StatelessWidget {
-  const AppNavigationBar({
+class AsgardNavigationBar extends StatelessWidget {
+  const AsgardNavigationBar({
     Key? key,
     required this.leading,
     required this.body,
@@ -37,11 +37,11 @@ class AppNavigationBar extends StatelessWidget {
               ),
               FadeTransition(
                 opacity: animation,
-                child: const AppBackButton(),
+                child: const AsgardBackButton(),
               ),
             ],
           ),
-        const AppGap.regular(),
+        const AsgardGap.regular(),
         if (action == null) body,
         if (action != null)
           Expanded(
@@ -65,7 +65,7 @@ class AppNavigationBar extends StatelessWidget {
               ],
             ),
           ),
-        const AppGap.regular(),
+        const AsgardGap.regular(),
         if (action == null) summary,
         if (action != null)
           Stack(
@@ -107,18 +107,18 @@ class AppNavigationBar extends StatelessWidget {
               opacity: !canNavigateBack ? 0.0 : 1.0,
               child: IgnorePointer(
                 ignoring: !canNavigateBack,
-                child: const AppBackButton(),
+                child: const AsgardBackButton(),
               ),
             ),
           ],
         ),
-        const AppGap.regular(),
+        const AsgardGap.regular(),
         if (canNavigateBack) Expanded(child: summary),
         if (!canNavigateBack)
           Expanded(
             child: body,
           ),
-        const AppGap.regular(),
+        const AsgardGap.regular(),
         if (!canNavigateBack) summary,
         if (canNavigateBack && action != null) action,
       ],
@@ -146,9 +146,9 @@ class NavigationBarContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
-    return AppContainer(
-      padding: const AppEdgeInsets.regular(),
+    final theme = AsgardTheme.of(context);
+    return AsgardContainer(
+      padding: const AsgardEdgeInsets.regular(),
       decoration: BoxDecoration(
         color: theme.colors.actionBarBackground,
         borderRadius: theme.radius.asBorderRadius().regular,

@@ -7,32 +7,30 @@
         {
             "name": "Asgard",
             "type": "dart",
-            // "cwd": "asgard",
             "request": "launch",
             "program": "asgard/lib/main.dart",
         },
-        {
-            "name": "Asgard for Web",
-            "type": "dart",
-            "request": "launch",
-            "program": "asgard/lib/main.dart",
-            "args": [
-              "-d",
-              "chrome"
-            ]
-          },
+        // {
+        //     "name": "Asgard for Web",
+        //     "type": "dart",
+        //     "request": "launch",
+        //     "program": "asgard/lib/main.dart",
+        //     "args": [
+        //       "-d",
+        //       "chrome"
+        //     ],
+        // },
         // {
         //     "name": "asgard (profile mode)",
-        //     "cwd": "asgard",
         //     "request": "launch",
         //     "type": "dart",
         //     "flutterMode": "profile"
         // },
-        {
-			"name": "Asgard StoryBook",
-			"type": "dart",
-			"request": "launch",
-			"program": "storybook/lib/main.dart"
-		},
+        // {
+        //     "name": "Asgard StoryBook",
+        //     "type": "dart",
+        //     "request": "launch",
+        //     "program": "storybook/lib/main.dart"
+        // },
     ]
 }

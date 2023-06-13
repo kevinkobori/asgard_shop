@@ -20,7 +20,7 @@ class TransparentPage<T> extends Page<T> {
 
   @override
   Route<T> createRoute(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     return PageRouteBuilder(
       transitionDuration: theme.durations.regular,
       opaque: false,

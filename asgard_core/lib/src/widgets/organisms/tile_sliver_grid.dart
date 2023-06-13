@@ -2,8 +2,8 @@ import 'package:asgard_core/src/theme/theme.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-class AppTileSliverGrid extends StatelessWidget {
-  const AppTileSliverGrid({
+class AsgardTileSliverGrid extends StatelessWidget {
+  const AsgardTileSliverGrid({
     Key? key,
     required this.children,
     this.crossAxisCount = 2,
@@ -16,7 +16,7 @@ class AppTileSliverGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     final grid = SliverMasonryGrid.count(
       crossAxisCount: crossAxisCount,
       mainAxisSpacing: theme.spacing.regular,

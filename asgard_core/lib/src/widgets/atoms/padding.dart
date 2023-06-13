@@ -4,14 +4,14 @@ import 'package:flutter/widgets.dart';
 
 import 'gap.dart';
 
-class AppEdgeInsets extends Equatable {
-  const AppEdgeInsets.all(AppGapSize value)
+class AsgardEdgeInsets extends Equatable {
+  const AsgardEdgeInsets.all(AppGapSize value)
       : left = value,
         top = value,
         right = value,
         bottom = value;
 
-  const AppEdgeInsets.symmetric({
+  const AsgardEdgeInsets.symmetric({
     AppGapSize vertical = AppGapSize.none,
     AppGapSize horizontal = AppGapSize.none,
   })  : left = horizontal,
@@ -19,38 +19,38 @@ class AppEdgeInsets extends Equatable {
         right = horizontal,
         bottom = vertical;
 
-  const AppEdgeInsets.only({
+  const AsgardEdgeInsets.only({
     this.left = AppGapSize.none,
     this.top = AppGapSize.none,
     this.right = AppGapSize.none,
     this.bottom = AppGapSize.none,
   });
 
-  const AppEdgeInsets.small()
+  const AsgardEdgeInsets.small()
       : left = AppGapSize.small,
         top = AppGapSize.small,
         right = AppGapSize.small,
         bottom = AppGapSize.small;
 
-  const AppEdgeInsets.semiSmall()
+  const AsgardEdgeInsets.semiSmall()
       : left = AppGapSize.semiSmall,
         top = AppGapSize.semiSmall,
         right = AppGapSize.semiSmall,
         bottom = AppGapSize.semiSmall;
 
-  const AppEdgeInsets.regular()
+  const AsgardEdgeInsets.regular()
       : left = AppGapSize.regular,
         top = AppGapSize.regular,
         right = AppGapSize.regular,
         bottom = AppGapSize.regular;
 
-  const AppEdgeInsets.semiBig()
+  const AsgardEdgeInsets.semiBig()
       : left = AppGapSize.semiBig,
         top = AppGapSize.semiBig,
         right = AppGapSize.semiBig,
         bottom = AppGapSize.semiBig;
 
-  const AppEdgeInsets.big()
+  const AsgardEdgeInsets.big()
       : left = AppGapSize.big,
         top = AppGapSize.big,
         right = AppGapSize.big,
@@ -69,7 +69,7 @@ class AppEdgeInsets extends Equatable {
         bottom,
       ];
 
-  EdgeInsets toEdgeInsets(AppThemeData theme) {
+  EdgeInsets toEdgeInsets(AsgardThemeData theme) {
     return EdgeInsets.only(
       left: left.getSpacing(theme),
       top: top.getSpacing(theme),
@@ -79,49 +79,49 @@ class AppEdgeInsets extends Equatable {
   }
 }
 
-class AppPadding extends StatelessWidget {
-  const AppPadding({
+class AsgardPadding extends StatelessWidget {
+  const AsgardPadding({
     Key? key,
-    this.padding = const AppEdgeInsets.all(AppGapSize.none),
+    this.padding = const AsgardEdgeInsets.all(AppGapSize.none),
     this.child,
   }) : super(key: key);
 
-  const AppPadding.small({
+  const AsgardPadding.small({
     Key? key,
     this.child,
-  })  : padding = const AppEdgeInsets.all(AppGapSize.none),
+  })  : padding = const AsgardEdgeInsets.all(AppGapSize.none),
         super(key: key);
 
-  const AppPadding.semiSmall({
+  const AsgardPadding.semiSmall({
     Key? key,
     this.child,
-  })  : padding = const AppEdgeInsets.all(AppGapSize.semiSmall),
+  })  : padding = const AsgardEdgeInsets.all(AppGapSize.semiSmall),
         super(key: key);
 
-  const AppPadding.regular({
+  const AsgardPadding.regular({
     Key? key,
     this.child,
-  })  : padding = const AppEdgeInsets.all(AppGapSize.regular),
+  })  : padding = const AsgardEdgeInsets.all(AppGapSize.regular),
         super(key: key);
 
-  const AppPadding.semiBig({
+  const AsgardPadding.semiBig({
     Key? key,
     this.child,
-  })  : padding = const AppEdgeInsets.all(AppGapSize.semiBig),
+  })  : padding = const AsgardEdgeInsets.all(AppGapSize.semiBig),
         super(key: key);
 
-  const AppPadding.big({
+  const AsgardPadding.big({
     Key? key,
     this.child,
-  })  : padding = const AppEdgeInsets.all(AppGapSize.big),
+  })  : padding = const AsgardEdgeInsets.all(AppGapSize.big),
         super(key: key);
 
-  final AppEdgeInsets padding;
+  final AsgardEdgeInsets padding;
   final Widget? child;
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     return Padding(
       padding: padding.toEdgeInsets(theme),
       child: child,

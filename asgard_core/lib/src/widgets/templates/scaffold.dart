@@ -1,23 +1,38 @@
+// part of asgard_app;
 import 'dart:math' as math;
+
+// final theme = AppTheme.of(context);
+// final product = context.select((ProductDetailState state) => state.product);
+
+// _AppScaffold(
+//   floatingBar: const ProductDetailNavigationBar(),
+//   backgroundColor: theme.colors.background.withAlpha(0),
+//   body: AppContentSheet(
+//     children: [
+//       if (product == null) const AppText.title2('Not found'),
+//       if (product != null) ..._buildBody(context, theme, product),
+//     ],
+//   ),
+// );
 
 import 'package:asgard_core/asgard_core.dart';
 
-class AppScaffold extends StatelessWidget {
-  const AppScaffold({
+class AsgardScaffold extends StatelessWidget {
+  final Widget body;
+  final Color? backgroundColor;
+  final Widget? floatingBar;
+
+  const AsgardScaffold({
     Key? key,
     required this.body,
     this.backgroundColor,
     this.floatingBar,
   }) : super(key: key);
 
-  final Widget body;
-  final Color? backgroundColor;
-  final Widget? floatingBar;
-
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     final floatingBar = this.floatingBar;
     return Container(
       color: backgroundColor ?? theme.colors.background,

@@ -2,7 +2,7 @@ library asgard_core;
 
 export 'package:flutter/widgets.dart';
 
+export 'src/configuration/pages.dart';
 export 'src/theme/responsive_theme.dart';
 export 'src/theme/theme.dart';
-export 'src/widgets/pages.dart';
 export 'src/widgets/widgets.dart';

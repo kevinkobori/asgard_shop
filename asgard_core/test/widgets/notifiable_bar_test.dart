@@ -1,9 +1,10 @@
 import 'package:asgard_core/asgard_core.dart';
+
 import '../base/widget.dart';
 
 void main() {
   Widget bar(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     return Container(
       height: 60,
       decoration: BoxDecoration(
@@ -13,9 +14,9 @@ void main() {
     );
   }
 
-  AppNotification notification(BuildContext context) {
-    final theme = AppTheme.of(context);
-    return AppNotification(
+  AsgardNotification notification(BuildContext context) {
+    final theme = AsgardTheme.of(context);
+    return AsgardNotification(
       title: 'Save 50% on shields this week',
       description: 'See the offer',
       icon: theme.icons.characters.tag,
@@ -27,7 +28,7 @@ void main() {
     {
       'opened': Builder(
         builder: (context) {
-          return AppNotifiableBarLayout.opened(
+          return AsgardNotifiableBarLayout.opened(
             notification: notification(context),
             child: bar(context),
           );
@@ -35,7 +36,7 @@ void main() {
       ),
       'closed': Builder(
         builder: (context) {
-          return AppNotifiableBarLayout.closed(
+          return AsgardNotifiableBarLayout.closed(
             child: bar(context),
           );
         },

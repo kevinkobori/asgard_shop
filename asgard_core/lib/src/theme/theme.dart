@@ -2,15 +2,10 @@ import 'package:flutter/widgets.dart';
 
 import 'data/data.dart';
 
-export 'data/colors.dart';
 export 'data/data.dart';
-export 'data/icons.dart';
-export 'data/radius.dart';
-export 'data/shadows.dart';
-export 'data/spacing.dart';
 
-class AppTheme extends InheritedWidget {
-  const AppTheme({
+class AsgardTheme extends InheritedWidget {
+  const AsgardTheme({
     Key? key,
     required this.data,
     required Widget child,
@@ -19,15 +14,15 @@ class AppTheme extends InheritedWidget {
           child: child,
         );
 
-  final AppThemeData data;
+  final AsgardThemeData data;
 
-  static AppThemeData of(BuildContext context) {
-    final widget = context.dependOnInheritedWidgetOfExactType<AppTheme>();
+  static AsgardThemeData of(BuildContext context) {
+    final widget = context.dependOnInheritedWidgetOfExactType<AsgardTheme>();
     return widget!.data;
   }
 
   @override
-  bool updateShouldNotify(covariant AppTheme oldWidget) {
+  bool updateShouldNotify(covariant AsgardTheme oldWidget) {
     return data != oldWidget.data;
   }
 }

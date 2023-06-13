@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
-class Cart extends Equatable {
-  const Cart({
+class CartEntity extends Equatable {
+  const CartEntity({
     required this.productIds,
   });
 

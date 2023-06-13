@@ -5,14 +5,14 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class AppImagesData extends Equatable {
-  const AppImagesData({
+class AsgardImagesData extends Equatable {
+  const AsgardImagesData({
     required this.appLogo,
     required this.backgroundPattern,
   });
 
-  factory AppImagesData.regular({required PictureProvider appLogo}) =>
-      AppImagesData(
+  factory AsgardImagesData.regular({required PictureProvider appLogo}) =>
+      AsgardImagesData(
         appLogo: appLogo,
         backgroundPattern: const AssetImage(
           'assets/images/background_pattern.png',
@@ -20,8 +20,8 @@ class AppImagesData extends Equatable {
         ),
       );
 
-  factory AppImagesData.highContrast({required PictureProvider appLogo}) =>
-      AppImagesData(
+  factory AsgardImagesData.highContrast({required PictureProvider appLogo}) =>
+      AsgardImagesData(
         appLogo: appLogo,
         backgroundPattern: MemoryImage(kTransparentImage),
       );
@@ -35,15 +35,15 @@ class AppImagesData extends Equatable {
         backgroundPattern.named('backgroundPattern'),
       ];
 
-  AppImagesData withAppLogo(PictureProvider appLogo) {
-    return AppImagesData(
+  AsgardImagesData withAppLogo(PictureProvider appLogo) {
+    return AsgardImagesData(
       appLogo: appLogo,
       backgroundPattern: backgroundPattern,
     );
   }
 
-  AppImagesData withBackgroundPattern(ImageProvider backgroundPattern) {
-    return AppImagesData(
+  AsgardImagesData withBackgroundPattern(ImageProvider backgroundPattern) {
+    return AsgardImagesData(
       appLogo: appLogo,
       backgroundPattern: backgroundPattern,
     );

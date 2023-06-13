@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:asgard_core/asgard_core.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as material;
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_utils/test_utils.dart';
 
@@ -22,7 +22,7 @@ void testAppView(
     appTestWidgets(
       deviceCategory.key,
       {
-        for (var colorMode in AppThemeColorMode.values)
+        for (var colorMode in AsgardThemeColorMode.values)
           colorMode.name: Row(
             mainAxisSize: MainAxisSize.min,
             textDirection: TextDirection.ltr,
@@ -31,7 +31,7 @@ void testAppView(
               ...deviceCategory.value.entries.map(
                 (device) => MediaQuery(
                   data: device.value,
-                  child: AppResponsiveTheme(
+                  child: AsgardResponsiveTheme(
                     colorMode: colorMode,
                     appLogo: StringPicture(
                       SvgPicture.svgStringDecoderBuilder,
@@ -50,16 +50,16 @@ void testAppView(
                               child: Center(
                                 child: Container(
                                   decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: material.Colors.white,
                                     borderRadius: BorderRadius.circular(4),
                                   ),
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 8,
                                     vertical: 4,
                                   ),
-                                  child: AppText.title3(
+                                  child: AsgardText.title3(
                                     device.key,
-                                    color: Colors.black,
+                                    color: material.Colors.black,
                                   ),
                                 ),
                               ),
@@ -70,7 +70,7 @@ void testAppView(
                                 borderRadius: BorderRadius.circular(12),
                                 child: Stack(
                                   children: [
-                                    MaterialApp(
+                                    material.MaterialApp(
                                       debugShowCheckedModeBanner: false,
                                       useInheritedMediaQuery: true,
                                       home: child,
@@ -83,9 +83,11 @@ void testAppView(
                                         height: device.value.padding.top,
                                         child: Container(
                                           decoration: BoxDecoration(
-                                            color: Colors.red.withAlpha(40),
+                                            color: material.Colors.red
+                                                .withAlpha(40),
                                             border: Border.all(
-                                              color: Colors.red.withAlpha(100),
+                                              color: material.Colors.red
+                                                  .withAlpha(100),
                                               width: 2,
                                             ),
                                             borderRadius:
@@ -103,9 +105,11 @@ void testAppView(
                                         height: device.value.padding.bottom,
                                         child: Container(
                                           decoration: BoxDecoration(
-                                            color: Colors.red.withAlpha(40),
+                                            color: material.Colors.red
+                                                .withAlpha(40),
                                             border: Border.all(
-                                              color: Colors.red.withAlpha(100),
+                                              color: material.Colors.red
+                                                  .withAlpha(100),
                                               width: 2,
                                             ),
                                             borderRadius:
@@ -123,9 +127,11 @@ void testAppView(
                                         width: device.value.padding.left,
                                         child: Container(
                                           decoration: BoxDecoration(
-                                            color: Colors.red.withAlpha(40),
+                                            color: material.Colors.red
+                                                .withAlpha(40),
                                             border: Border.all(
-                                              color: Colors.red.withAlpha(100),
+                                              color: material.Colors.red
+                                                  .withAlpha(100),
                                               width: 2,
                                             ),
                                             borderRadius:
@@ -143,9 +149,11 @@ void testAppView(
                                         width: device.value.padding.right,
                                         child: Container(
                                           decoration: BoxDecoration(
-                                            color: Colors.red.withAlpha(40),
+                                            color: material.Colors.red
+                                                .withAlpha(40),
                                             border: Border.all(
-                                              color: Colors.red.withAlpha(100),
+                                              color: material.Colors.red
+                                                  .withAlpha(100),
                                               width: 2,
                                             ),
                                             borderRadius:

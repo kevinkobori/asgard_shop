@@ -9,6 +9,29 @@
 # packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
+analyzer:
+  plugins:
+    - import_lint
+
+import_lint:
+  rules:
+    asgard_core_rule:
+      target: "package:asgard_core/target/*.dart"
+      from: "package:asgard_core/from/*.dart"
+      except: ["package:asgard_core/from/except.dart"]
+    self_rule:
+      target: "package:asgard_core/self/*.dart"
+      from: "package:asgard_core/self/*.dart"
+      except: []
+    only_rule:
+      target: "package:asgard_core/*[!only]/*.dart"
+      from: "package:asgard_core/only_from/*.dart"
+      except: []
+    package_rule:
+      target: "package:asgard_core/**/*.dart"
+      from: "package:import_lint/*.dart"
+      except: []
+      
 linter:
   # The lint rules applied to this project can be customized in the
   # section below to disable rules from the `package:flutter_lints/flutter.yaml`

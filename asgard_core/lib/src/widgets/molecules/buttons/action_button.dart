@@ -1,8 +1,8 @@
 import 'package:asgard_core/asgard_core.dart';
 import 'package:tap_builder/tap_builder.dart';
 
-class AppActionButton extends StatelessWidget {
-  const AppActionButton({
+class AsgardActionButton extends StatelessWidget {
+  const AsgardActionButton({
     Key? key,
     required this.icon,
     this.onTap,
@@ -18,15 +18,15 @@ class AppActionButton extends StatelessWidget {
       builder: (context, state, hasFocus) {
         switch (state) {
           case TapState.hover:
-            return AppActionButtonLayout.hovered(
+            return AsgardActionButtonLayout.hovered(
               icon: icon,
             );
           case TapState.pressed:
-            return AppActionButtonLayout.pressed(
+            return AsgardActionButtonLayout.pressed(
               icon: icon,
             );
           default:
-            return AppActionButtonLayout.inactive(
+            return AsgardActionButtonLayout.inactive(
               icon: icon,
             );
         }
@@ -35,20 +35,20 @@ class AppActionButton extends StatelessWidget {
   }
 }
 
-class AppActionButtonLayout extends StatelessWidget {
-  const AppActionButtonLayout.inactive({
+class AsgardActionButtonLayout extends StatelessWidget {
+  const AsgardActionButtonLayout.inactive({
     Key? key,
     required this.icon,
   })  : _state = AppButtonState.inactive,
         super(key: key);
 
-  const AppActionButtonLayout.hovered({
+  const AsgardActionButtonLayout.hovered({
     Key? key,
     required this.icon,
   })  : _state = AppButtonState.hovered,
         super(key: key);
 
-  const AppActionButtonLayout.pressed({
+  const AsgardActionButtonLayout.pressed({
     Key? key,
     required this.icon,
   })  : _state = AppButtonState.pressed,
@@ -59,20 +59,20 @@ class AppActionButtonLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     switch (_state) {
       case AppButtonState.hovered:
-        return AppButtonLayout.hovered(
+        return AsgardButtonLayout.hovered(
           icon: icon,
           hoveredBackgroundColor: theme.colors.accentOpposite.withOpacity(0.15),
         );
       case AppButtonState.pressed:
-        return AppButtonLayout.pressed(
+        return AsgardButtonLayout.pressed(
           icon: icon,
           pressedBackgroundColor: theme.colors.accentOpposite.withOpacity(0.20),
         );
       case AppButtonState.inactive:
-        return AppButtonLayout.inactive(
+        return AsgardButtonLayout.inactive(
           icon: icon,
           inactiveBackgroundColor: theme.colors.accentOpposite.withOpacity(0),
         );

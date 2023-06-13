@@ -1,22 +1,19 @@
 import 'dart:ui' as ui;
 
-import 'package:asgard_core/src/theme/data/form_factor.dart';
-import 'package:asgard_core/src/theme/data/images.dart';
-import 'package:asgard_core/src/theme/data/typography.dart';
 import 'package:asgard_core/src/theme/theme.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-enum AppThemeColorMode {
+enum AsgardThemeColorMode {
   light,
   dark,
   highContrast,
 }
 
-/// Updates automatically the [AppTheme] regarding the current [MediaQuery],
+/// Updates automatically the [AsgardTheme] regarding the current [MediaQuery],
 /// as soon as the [theme] isn't overriden.
-class AppResponsiveTheme extends StatelessWidget {
-  const AppResponsiveTheme({
+class AsgardResponsiveTheme extends StatelessWidget {
+  const AsgardResponsiveTheme({
     Key? key,
     required this.appLogo,
     required this.child,
@@ -25,69 +22,69 @@ class AppResponsiveTheme extends StatelessWidget {
     this.formFactor,
   }) : super(key: key);
 
-  final AppThemeColorMode? colorMode;
-  final AppFormFactor? formFactor;
+  final AsgardThemeColorMode? colorMode;
+  final AsgardFormFactor? formFactor;
   final Widget child;
   final PictureProvider appLogo;
   final PictureProvider? darkAppLogo;
 
-  static AppThemeColorMode colorModeOf(BuildContext context) {
+  static AsgardThemeColorMode colorModeOf(BuildContext context) {
     final platformBrightness = MediaQuery.platformBrightnessOf(context);
     final useDarkTheme = platformBrightness == ui.Brightness.dark;
     if (useDarkTheme) {
-      return AppThemeColorMode.dark;
+      return AsgardThemeColorMode.dark;
     }
     final highContrast = MediaQuery.highContrastOf(context);
     if (highContrast) {
-      return AppThemeColorMode.highContrast;
+      return AsgardThemeColorMode.highContrast;
     }
 
-    return AppThemeColorMode.light;
+    return AsgardThemeColorMode.light;
   }
 
-  static AppFormFactor formFactorOf(BuildContext context) {
+  static AsgardFormFactor formFactorOf(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
 
     if (mediaQuery.size.width < 200) {
-      return AppFormFactor.small;
+      return AsgardFormFactor.small;
     }
 
-    return AppFormFactor.medium;
+    return AsgardFormFactor.medium;
   }
 
   @override
   Widget build(BuildContext context) {
-    var theme = AppThemeData.regular(appLogo: appLogo);
+    var theme = AsgardThemeData.regular(appLogo: appLogo);
 
     /// Updating the colors for the current brightness
     final colorMode = this.colorMode ?? colorModeOf(context);
     switch (colorMode) {
-      case AppThemeColorMode.dark:
-        theme = theme.withColors(AppColorsData.dark());
+      case AsgardThemeColorMode.dark:
+        theme = theme.withColors(AsgardColorsData.dark());
 
-        final darkAppLogo = this.darkAppLogo;
-        if (darkAppLogo != null) {
-          theme = theme.withImages(theme.images.withAppLogo(darkAppLogo));
+        final appLogo = darkAppLogo;
+        if (appLogo != null) {
+          theme = theme.withImages(theme.images.withAppLogo(appLogo));
         }
         break;
-      case AppThemeColorMode.highContrast:
-        theme = theme.withColors(AppColorsData.highContrast());
+      case AsgardThemeColorMode.highContrast:
+        theme = theme.withColors(AsgardColorsData.highContrast());
         theme = theme.withImages(
-          AppImagesData.highContrast(appLogo: theme.images.appLogo),
+          AsgardImagesData.highContrast(appLogo: theme.images.appLogo),
         );
         break;
-      case AppThemeColorMode.light:
+      case AsgardThemeColorMode.light:
         break;
     }
 
     // Updating the sizes for current form factor.
     var formFactor = this.formFactor ?? formFactorOf(context);
     theme = theme.withFormFactor(formFactor);
-    if (formFactor == AppFormFactor.small) {
-      theme = theme.withTypography(AppTypographyData.small());
+    if (formFactor == AsgardFormFactor.small) {
+      theme = theme.withTypography(AsgardTypographyData.small());
     }
 
-    return AppTheme(
+    return AsgardTheme(
       data: theme,
       child: child,
     );

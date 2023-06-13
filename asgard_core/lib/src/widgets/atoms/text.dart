@@ -9,8 +9,8 @@ enum AppTextLevel {
   title3,
 }
 
-class AppText extends StatelessWidget {
-  const AppText(
+class AsgardText extends StatelessWidget {
+  const AsgardText(
     this.data, {
     Key? key,
     this.color,
@@ -19,7 +19,7 @@ class AppText extends StatelessWidget {
     this.level = AppTextLevel.paragraph1,
   }) : super(key: key);
 
-  const AppText.paragraph1(
+  const AsgardText.paragraph1(
     this.data, {
     Key? key,
     this.color,
@@ -28,7 +28,7 @@ class AppText extends StatelessWidget {
   })  : level = AppTextLevel.paragraph1,
         super(key: key);
 
-  const AppText.paragraph2(
+  const AsgardText.paragraph2(
     this.data, {
     Key? key,
     this.color,
@@ -37,7 +37,7 @@ class AppText extends StatelessWidget {
   })  : level = AppTextLevel.paragraph2,
         super(key: key);
 
-  const AppText.title1(
+  const AsgardText.title1(
     this.data, {
     Key? key,
     this.color,
@@ -46,7 +46,7 @@ class AppText extends StatelessWidget {
   })  : level = AppTextLevel.title1,
         super(key: key);
 
-  const AppText.title2(
+  const AsgardText.title2(
     this.data, {
     Key? key,
     this.color,
@@ -55,7 +55,7 @@ class AppText extends StatelessWidget {
   })  : level = AppTextLevel.title2,
         super(key: key);
 
-  const AppText.title3(
+  const AsgardText.title3(
     this.data, {
     Key? key,
     this.color,
@@ -72,7 +72,7 @@ class AppText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     final color = this.color ?? theme.colors.foreground;
     final style = () {
       switch (level) {

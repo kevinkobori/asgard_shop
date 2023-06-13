@@ -1,3 +1,2 @@
-export 'cart/models.dart';
-
-export 'products/models.dart';
+export 'cart/entity.dart';
+export 'products/entity.dart';

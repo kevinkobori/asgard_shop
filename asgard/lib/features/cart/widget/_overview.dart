@@ -1,4 +1,5 @@
 import 'package:asgard/features/cart/state.dart';
+// import 'package:asgard_core/src/theme/data/atoms/atoms2.dart';
 import 'package:asgard_core/asgard_core.dart';
 import 'package:provider/provider.dart';
 
@@ -9,7 +10,7 @@ class CartOverview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     final itemCount = context.select((CartState state) => state.items.length);
     final totalPrice = context.select((CartState state) => state.totalPrice);
     return Row(
@@ -18,18 +19,18 @@ class CartOverview extends StatelessWidget {
         Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            AppText.paragraph1(
+            AsgardText.paragraph1(
               '$itemCount items',
               color: theme.colors.actionBarForeground,
             ),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                AppText.title3(
+                AsgardText.title3(
                   '$totalPrice',
                   color: theme.colors.actionBarForeground,
                 ),
-                AppIcon.regular(
+                AsgardIcon.regular(
                   theme.icons.characters.vikoin,
                   color: theme.colors.actionBarForeground,
                 ),

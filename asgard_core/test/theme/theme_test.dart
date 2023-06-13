@@ -1,5 +1,4 @@
 import 'package:asgard_core/asgard_core.dart';
-import 'package:asgard_core/src/theme/data/form_factor.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:test_utils/test_utils.dart';
 
@@ -7,23 +6,23 @@ import 'library/library.dart';
 
 void main() {
   _renderLibrary(
-    AppFormFactor.medium,
+    AsgardFormFactor.medium,
   );
   _renderLibrary(
-    AppFormFactor.medium,
+    AsgardFormFactor.medium,
   );
   _renderLibrary(
-    AppFormFactor.medium,
+    AsgardFormFactor.medium,
   );
   _renderLibrary(
-    AppFormFactor.small,
+    AsgardFormFactor.small,
   );
   _renderLibrary(
-    AppFormFactor.small,
+    AsgardFormFactor.small,
   );
 }
 
-void _renderLibrary(AppFormFactor formFactor) async {
+void _renderLibrary(AsgardFormFactor formFactor) async {
   testWidgets('${formFactor.name} theme rendering', (tester) async {
     TestWidgetsFlutterBinding.ensureInitialized();
     await loadTestFonts();
@@ -31,7 +30,7 @@ void _renderLibrary(AppFormFactor formFactor) async {
     final key = UniqueKey();
 
     tester.binding.window.physicalSizeTestValue =
-        Size(AppThemeColorMode.values.length * 700.0, 1500);
+        Size(AsgardThemeColorMode.values.length * 700.0, 1500);
     tester.binding.window.devicePixelRatioTestValue = 1.0;
 
     await tester.pumpWidget(
@@ -40,9 +39,9 @@ void _renderLibrary(AppFormFactor formFactor) async {
         textDirection: TextDirection.ltr,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          ...AppThemeColorMode.values.map(
+          ...AsgardThemeColorMode.values.map(
             (colorMode) => Expanded(
-              child: AppThemeLibrary(
+              child: AsgardThemeLibrary(
                 colorMode: colorMode,
                 formFactor: formFactor,
               ),

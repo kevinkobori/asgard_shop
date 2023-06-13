@@ -2,8 +2,8 @@ import 'package:asgard_core/src/utils/named.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 
-class AppSpacingData extends Equatable {
-  const AppSpacingData({
+class AsgardSpacingData extends Equatable {
+  const AsgardSpacingData({
     required this.small,
     required this.semiSmall,
     required this.regular,
@@ -11,7 +11,7 @@ class AppSpacingData extends Equatable {
     required this.big,
   });
 
-  factory AppSpacingData.regular() => const AppSpacingData(
+  factory AsgardSpacingData.regular() => const AsgardSpacingData(
         small: 4,
         semiSmall: 8,
         regular: 12,
@@ -25,7 +25,7 @@ class AppSpacingData extends Equatable {
   final double semiBig;
   final double big;
 
-  AppEdgeInsetsSpacingData asInsets() => AppEdgeInsetsSpacingData(this);
+  AsgardEdgeInsetsSpacingData asInsets() => AsgardEdgeInsetsSpacingData(this);
 
   @override
   List<Object?> get props => [
@@ -37,8 +37,8 @@ class AppSpacingData extends Equatable {
       ];
 }
 
-class AppEdgeInsetsSpacingData extends Equatable {
-  const AppEdgeInsetsSpacingData(this._spacing);
+class AsgardEdgeInsetsSpacingData extends Equatable {
+  const AsgardEdgeInsetsSpacingData(this._spacing);
 
   EdgeInsets get small => EdgeInsets.all(_spacing.small);
   EdgeInsets get semiSmall => EdgeInsets.all(_spacing.semiSmall);
@@ -46,7 +46,7 @@ class AppEdgeInsetsSpacingData extends Equatable {
   EdgeInsets get semiBig => EdgeInsets.all(_spacing.semiBig);
   EdgeInsets get big => EdgeInsets.all(_spacing.big);
 
-  final AppSpacingData _spacing;
+  final AsgardSpacingData _spacing;
 
   @override
   List<Object?> get props => [_spacing];

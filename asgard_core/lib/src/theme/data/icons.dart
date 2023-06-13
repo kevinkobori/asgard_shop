@@ -1,8 +1,8 @@
 import 'package:asgard_core/src/utils/named.dart';
 import 'package:equatable/equatable.dart';
 
-class AppIconsData extends Equatable {
-  const AppIconsData({
+class AsgardIconsData extends Equatable {
+  const AsgardIconsData({
     required this.fontFamily,
     required this.fontPackage,
     required this.characters,
@@ -10,17 +10,17 @@ class AppIconsData extends Equatable {
   });
 
   /// Icons have been exported with "Export Icon Font" Figma plugin.
-  factory AppIconsData.regular() => AppIconsData(
+  factory AsgardIconsData.regular() => AsgardIconsData(
         fontFamily: 'asgard_icons',
         fontPackage: 'asgard_core',
-        characters: AppIconCharactersData.regular(),
-        sizes: AppIconSizesData.regular(),
+        characters: AsgardIconCharactersData.regular(),
+        sizes: AsgardIconSizesData.regular(),
       );
 
   final String fontFamily;
   final String? fontPackage;
-  final AppIconCharactersData characters;
-  final AppIconSizesData sizes;
+  final AsgardIconCharactersData characters;
+  final AsgardIconSizesData sizes;
 
   @override
   List<Object?> get props => [
@@ -31,8 +31,8 @@ class AppIconsData extends Equatable {
       ];
 }
 
-class AppIconCharactersData extends Equatable {
-  const AppIconCharactersData({
+class AsgardIconCharactersData extends Equatable {
+  const AsgardIconCharactersData({
     required this.addProduct,
     required this.arrowBack,
     required this.dismiss,
@@ -42,7 +42,7 @@ class AppIconCharactersData extends Equatable {
     required this.shoppingCart,
   });
 
-  factory AppIconCharactersData.regular() => AppIconCharactersData(
+  factory AsgardIconCharactersData.regular() => AsgardIconCharactersData(
         addProduct: String.fromCharCodes([57344, 58343, 58413, 57568]),
         arrowBack: String.fromCharCodes([57344, 58537, 59260, 57572]),
         dismiss: String.fromCharCodes([57344, 57911, 61195, 57514]),
@@ -71,14 +71,14 @@ class AppIconCharactersData extends Equatable {
       ];
 }
 
-class AppIconSizesData extends Equatable {
-  const AppIconSizesData({
+class AsgardIconSizesData extends Equatable {
+  const AsgardIconSizesData({
     required this.small,
     required this.regular,
     required this.big,
   });
 
-  factory AppIconSizesData.regular() => const AppIconSizesData(
+  factory AsgardIconSizesData.regular() => const AsgardIconSizesData(
         small: 16.0,
         regular: 22.0,
         big: 32.0,

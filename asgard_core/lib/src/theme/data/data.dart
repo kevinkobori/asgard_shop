@@ -1,19 +1,20 @@
-import 'package:asgard_core/src/theme/data/images.dart';
-import 'package:asgard_core/src/theme/data/spacing.dart';
-import 'package:asgard_core/src/theme/data/typography.dart';
+import 'package:asgard_core/asgard_core.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'colors.dart';
-import 'durations.dart';
-import 'form_factor.dart';
-import 'icons.dart';
-import 'radius.dart';
-import 'shadows.dart';
+export 'colors.dart' show AsgardColorsData;
+export 'durations.dart' show AsgardDurationsData;
+export 'form_factor.dart' show AsgardFormFactor;
+export 'icons.dart';
+export 'images.dart';
+export 'radius.dart';
+export 'shadows.dart' show AsgardShadowsData;
+export 'spacing.dart';
+export 'typography.dart';
 
-class AppThemeData extends Equatable {
-  const AppThemeData({
+class AsgardThemeData extends Equatable {
+  const AsgardThemeData({
     required this.icons,
     required this.colors,
     required this.typography,
@@ -26,32 +27,32 @@ class AppThemeData extends Equatable {
     TargetPlatform? platform,
   }) : _platform = platform;
 
-  factory AppThemeData.regular({
+  factory AsgardThemeData.regular({
     required PictureProvider appLogo,
   }) =>
-      AppThemeData(
-        formFactor: AppFormFactor.medium,
-        icons: AppIconsData.regular(),
-        typography: AppTypographyData.regular(),
-        colors: AppColorsData.light(),
-        radius: const AppRadiusData.regular(),
-        spacing: AppSpacingData.regular(),
-        shadow: AppShadowsData.regular(),
-        durations: AppDurationsData.regular(),
-        images: AppImagesData.regular(
+      AsgardThemeData(
+        formFactor: AsgardFormFactor.medium,
+        icons: AsgardIconsData.regular(),
+        typography: AsgardTypographyData.regular(),
+        colors: AsgardColorsData.light(),
+        radius: const AsgardRadiusData.regular(),
+        spacing: AsgardSpacingData.regular(),
+        shadow: AsgardShadowsData.regular(),
+        durations: AsgardDurationsData.regular(),
+        images: AsgardImagesData.regular(
           appLogo: appLogo,
         ),
       );
 
-  final AppIconsData icons;
-  final AppColorsData colors;
-  final AppTypographyData typography;
-  final AppRadiusData radius;
-  final AppSpacingData spacing;
-  final AppShadowsData shadow;
-  final AppDurationsData durations;
-  final AppImagesData images;
-  final AppFormFactor formFactor;
+  final AsgardIconsData icons;
+  final AsgardColorsData colors;
+  final AsgardTypographyData typography;
+  final AsgardRadiusData radius;
+  final AsgardSpacingData spacing;
+  final AsgardShadowsData shadow;
+  final AsgardDurationsData durations;
+  final AsgardImagesData images;
+  final AsgardFormFactor formFactor;
   final TargetPlatform? _platform;
   TargetPlatform get platform => defaultTargetPlatform;
 
@@ -68,8 +69,8 @@ class AppThemeData extends Equatable {
         images,
       ];
 
-  AppThemeData withColors(AppColorsData colors) {
-    return AppThemeData(
+  AsgardThemeData withColors(AsgardColorsData colors) {
+    return AsgardThemeData(
       platform: platform,
       formFactor: formFactor,
       colors: colors,
@@ -83,8 +84,8 @@ class AppThemeData extends Equatable {
     );
   }
 
-  AppThemeData withImages(AppImagesData images) {
-    return AppThemeData(
+  AsgardThemeData withImages(AsgardImagesData images) {
+    return AsgardThemeData(
       platform: platform,
       formFactor: formFactor,
       colors: colors,
@@ -98,8 +99,8 @@ class AppThemeData extends Equatable {
     );
   }
 
-  AppThemeData withFormFactor(AppFormFactor formFactor) {
-    return AppThemeData(
+  AsgardThemeData withFormFactor(AsgardFormFactor formFactor) {
+    return AsgardThemeData(
       platform: platform,
       formFactor: formFactor,
       colors: colors,
@@ -113,8 +114,8 @@ class AppThemeData extends Equatable {
     );
   }
 
-  AppThemeData withTypography(AppTypographyData typography) {
-    return AppThemeData(
+  AsgardThemeData withTypography(AsgardTypographyData typography) {
+    return AsgardThemeData(
       platform: platform,
       formFactor: formFactor,
       colors: colors,

@@ -76,7 +76,7 @@ class ProductTileLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     return AspectRatio(
       aspectRatio: aspectRatio,
       child: ClipRRect(
@@ -122,8 +122,8 @@ class ProductTileLayout extends StatelessWidget {
                         ],
                       ),
                     ),
-                    child: AppPadding.semiSmall(
-                      child: AppText.title3(
+                    child: AsgardPadding.semiSmall(
+                      child: AsgardText.title3(
                         name,
                         color: theme.colors.accentOpposite,
                       ),
@@ -132,7 +132,7 @@ class ProductTileLayout extends StatelessWidget {
                 ),
                 Align(
                   alignment: Alignment.centerRight,
-                  child: AppPadding.semiSmall(
+                  child: AsgardPadding.semiSmall(
                     child: PriceLabel(price),
                   ),
                 ),

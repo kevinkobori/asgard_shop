@@ -1,7 +1,7 @@
 part of 'library.dart';
 
 ThemeSection radius(BuildContext context) {
-  final theme = AppTheme.of(context);
+  final theme = AsgardTheme.of(context);
   return ThemeSection(
     title: 'Border radius',
     categories: [

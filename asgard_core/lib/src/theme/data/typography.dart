@@ -2,8 +2,8 @@ import 'package:asgard_core/src/utils/named.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/rendering.dart';
 
-class AppTypographyData extends Equatable {
-  const AppTypographyData({
+class AsgardTypographyData extends Equatable {
+  const AsgardTypographyData({
     required this.paragraph1,
     required this.paragraph2,
     required this.title1,
@@ -11,7 +11,7 @@ class AppTypographyData extends Equatable {
     required this.title3,
   });
 
-  factory AppTypographyData.regular() => const AppTypographyData(
+  factory AsgardTypographyData.regular() => const AsgardTypographyData(
         paragraph1: TextStyle(
           fontFamily: 'Poppins',
           package: 'asgard_core',
@@ -49,7 +49,7 @@ class AppTypographyData extends Equatable {
         ),
       );
 
-  factory AppTypographyData.small() => const AppTypographyData(
+  factory AsgardTypographyData.small() => const AsgardTypographyData(
         paragraph1: TextStyle(
           fontFamily: 'Poppins',
           package: 'asgard_core',

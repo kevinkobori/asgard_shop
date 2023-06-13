@@ -1,8 +1,8 @@
 import 'package:asgard_core/asgard_core.dart';
 import 'package:tap_builder/tap_builder.dart';
 
-class AppButton extends StatelessWidget {
-  const AppButton({
+class AsgardButton extends StatelessWidget {
+  const AsgardButton({
     Key? key,
     this.icon,
     this.title,
@@ -28,7 +28,7 @@ class AppButton extends StatelessWidget {
             return Semantics(
               enabled: true,
               selected: true,
-              child: AppButtonLayout.hovered(
+              child: AsgardButtonLayout.hovered(
                 icon: icon,
                 title: title,
                 mainAxisSize: mainAxisSize,
@@ -38,7 +38,7 @@ class AppButton extends StatelessWidget {
             return Semantics(
               enabled: true,
               selected: true,
-              child: AppButtonLayout.pressed(
+              child: AsgardButtonLayout.pressed(
                 icon: icon,
                 title: title,
                 mainAxisSize: mainAxisSize,
@@ -48,7 +48,7 @@ class AppButton extends StatelessWidget {
             return Semantics(
               enabled: true,
               selected: true,
-              child: AppButtonLayout.inactive(
+              child: AsgardButtonLayout.inactive(
                 icon: icon,
                 title: title,
                 mainAxisSize: mainAxisSize,
@@ -66,8 +66,8 @@ enum AppButtonState {
   pressed,
 }
 
-class AppButtonLayout extends StatelessWidget {
-  const AppButtonLayout.inactive({
+class AsgardButtonLayout extends StatelessWidget {
+  const AsgardButtonLayout.inactive({
     Key? key,
     this.icon,
     this.title,
@@ -82,7 +82,7 @@ class AppButtonLayout extends StatelessWidget {
         ),
         super(key: key);
 
-  const AppButtonLayout.hovered({
+  const AsgardButtonLayout.hovered({
     Key? key,
     this.icon,
     this.title,
@@ -97,7 +97,7 @@ class AppButtonLayout extends StatelessWidget {
         ),
         super(key: key);
 
-  const AppButtonLayout.pressed({
+  const AsgardButtonLayout.pressed({
     Key? key,
     this.icon,
     this.title,
@@ -123,7 +123,7 @@ class AppButtonLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     final title = this.title;
     final icon = this.icon;
     final hasBoth = (title != null && icon != null);
@@ -154,12 +154,12 @@ class AppButtonLayout extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (title != null)
-            AppText.title3(
+            AsgardText.title3(
               title,
               color: foregroundColor,
             ),
-          if (hasBoth) const AppGap.semiSmall(),
-          if (icon != null) AppIcon.regular(icon, color: foregroundColor),
+          if (hasBoth) const AsgardGap.semiSmall(),
+          if (icon != null) AsgardIcon.regular(icon, color: foregroundColor),
         ],
       ),
     );

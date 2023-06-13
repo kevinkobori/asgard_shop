@@ -12,15 +12,15 @@ class ThemeContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
-    return AppScaffold(
+    final theme = AsgardTheme.of(context);
+    return AsgardScaffold(
       backgroundColor: theme.colors.background,
       body: Padding(
         padding: theme.spacing.asInsets().big,
         child: SpacedColumn(
           spaceBetween: theme.spacing.semiBig,
           children: [
-            AppText.title1(title),
+            AsgardText.title1(title),
             ...sections,
           ],
         ),
@@ -41,11 +41,11 @@ class ThemeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     return SpacedColumn(
       spaceBetween: 20.0,
       children: [
-        AppText.title2(
+        AsgardText.title2(
           title,
           color: theme.colors.accent,
         ),
@@ -71,7 +71,7 @@ class ThemeCategory extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        AppText.title3(title),
+        AsgardText.title3(title),
         Wrap(
           spacing: 8.0,
           runSpacing: 8.0,
@@ -123,7 +123,7 @@ class NamedCell<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -138,7 +138,7 @@ class NamedCell<T> extends StatelessWidget {
           ),
           child: builder(context, value.value, null),
         ),
-        AppText.paragraph2(
+        AsgardText.paragraph2(
           value.name,
           color: theme.colors.foreground.withAlpha(125),
           fontSize: 8,

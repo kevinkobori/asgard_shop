@@ -1,61 +1,61 @@
 import 'package:asgard_core/src/theme/theme.dart';
 import 'package:flutter/widgets.dart';
 
-enum AppIconSize {
+enum AsgardIconSize {
   small,
   regular,
   big,
 }
 
-extension AppIconSizeExtension on AppIconSizesData {
-  double resolve(AppIconSize size) {
+extension AppIconSizeExtension on AsgardIconSizesData {
+  double resolve(AsgardIconSize size) {
     switch (size) {
-      case AppIconSize.small:
+      case AsgardIconSize.small:
         return small;
-      case AppIconSize.regular:
+      case AsgardIconSize.regular:
         return regular;
-      case AppIconSize.big:
+      case AsgardIconSize.big:
         return big;
     }
   }
 }
 
-class AppIcon extends StatelessWidget {
-  const AppIcon(
+class AsgardIcon extends StatelessWidget {
+  const AsgardIcon(
     this.data, {
     Key? key,
     this.color,
-    this.size = AppIconSize.regular,
+    this.size = AsgardIconSize.regular,
   }) : super(key: key);
 
-  const AppIcon.small(
+  const AsgardIcon.small(
     this.data, {
     Key? key,
     this.color,
-  })  : size = AppIconSize.small,
+  })  : size = AsgardIconSize.small,
         super(key: key);
 
-  const AppIcon.regular(
+  const AsgardIcon.regular(
     this.data, {
     Key? key,
     this.color,
-  })  : size = AppIconSize.regular,
+  })  : size = AsgardIconSize.regular,
         super(key: key);
 
-  const AppIcon.big(
+  const AsgardIcon.big(
     this.data, {
     Key? key,
     this.color,
-  })  : size = AppIconSize.big,
+  })  : size = AsgardIconSize.big,
         super(key: key);
 
   final String data;
   final Color? color;
-  final AppIconSize size;
+  final AsgardIconSize size;
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     final color = this.color ?? theme.colors.foreground;
     return Text(
       data,
@@ -70,28 +70,28 @@ class AppIcon extends StatelessWidget {
   }
 }
 
-class AppAnimatedIcon extends StatelessWidget {
-  const AppAnimatedIcon(
+class AsgardAnimatedIcon extends StatelessWidget {
+  const AsgardAnimatedIcon(
     this.data, {
     Key? key,
     this.color,
-    this.size = AppIconSize.small,
+    this.size = AsgardIconSize.small,
     this.duration = const Duration(milliseconds: 200),
   }) : super(key: key);
 
   final String data;
   final Color? color;
-  final AppIconSize size;
+  final AsgardIconSize size;
   final Duration duration;
 
   bool get isAnimated => duration.inMilliseconds > 0;
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     final color = this.color ?? theme.colors.foreground;
     if (!isAnimated) {
-      return AppIcon(
+      return AsgardIcon(
         data,
         key: key,
         color: color,

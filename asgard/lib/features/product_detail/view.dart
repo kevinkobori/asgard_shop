@@ -43,15 +43,17 @@ class ProductDetailLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     final product = context.select((ProductDetailState state) => state.product);
 
-    return AppScaffold(
+    // return context.components.templates.appScaffold();
+    // return ElevatedButton(onPressed: () {}, child: Container());
+    return AsgardScaffold(
       floatingBar: const ProductDetailNavigationBar(),
       backgroundColor: theme.colors.background.withAlpha(0),
-      body: AppContentSheet(
+      body: AsgardContentSheet(
         children: [
-          if (product == null) const AppText.title2('Not found'),
+          if (product == null) const AsgardText.title2('Not found'),
           if (product != null) ..._buildBody(context, theme, product),
         ],
       ),
@@ -59,7 +61,7 @@ class ProductDetailLayout extends StatelessWidget {
   }
 
   List<Widget> _buildBody(
-      BuildContext context, AppThemeData theme, Product product) {
+      BuildContext context, AsgardThemeData theme, ProductEntity product) {
     return [
       ClipRRect(
         borderRadius: theme.radius.asBorderRadius().regular,
@@ -73,12 +75,12 @@ class ProductDetailLayout extends StatelessWidget {
           ),
         ),
       ),
-      AppText.title1(product.name),
-      AppText.title3(
+      AsgardText.title1(product.name),
+      AsgardText.title3(
         product.category,
         color: theme.colors.accent,
       ),
-      AppText.paragraph1(product.description),
+      AsgardText.paragraph1(product.description),
       const SizedBox(
         height: 100,
       ),

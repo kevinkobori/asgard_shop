@@ -20,7 +20,7 @@ class HotreloadWidgetbook extends StatelessWidget {
               useCases: [
                 WidgetbookUseCase(
                   name: 'elevated',
-                  builder: (context) => AppButton(
+                  builder: (context) => AsgardButton(
                     onTap: () {},
                     title: context.knobs.text(label: 'label'),
                   ),

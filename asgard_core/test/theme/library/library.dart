@@ -1,5 +1,4 @@
 import 'package:asgard_core/asgard_core.dart';
-import 'package:asgard_core/src/theme/data/form_factor.dart';
 import 'package:asgard_core/src/utils/named.dart';
 import 'package:flutter/material.dart' as material;
 import 'package:flutter_svg/flutter_svg.dart';
@@ -13,21 +12,21 @@ part 'shadows.dart';
 part 'spacing.dart';
 part 'typography.dart';
 
-class AppThemeLibrary extends StatelessWidget {
-  const AppThemeLibrary({
+class AsgardThemeLibrary extends StatelessWidget {
+  const AsgardThemeLibrary({
     Key? key,
     required this.colorMode,
     required this.formFactor,
   }) : super(key: key);
 
-  final AppThemeColorMode colorMode;
-  final AppFormFactor formFactor;
+  final AsgardThemeColorMode colorMode;
+  final AsgardFormFactor formFactor;
 
   @override
   Widget build(BuildContext context) {
     return material.MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: AppResponsiveTheme(
+      home: AsgardResponsiveTheme(
         appLogo: StringPicture(
           SvgPicture.svgStringDecoderBuilder,
           '<svg></svg>',

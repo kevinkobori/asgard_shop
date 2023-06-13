@@ -2,8 +2,20 @@ import 'package:asgard_core/src/utils/named.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/rendering.dart';
 
-class AppColorsData extends Equatable {
-  const AppColorsData({
+/// [https://www.color-name.com/]
+class PaleteColors {
+  static const Color black = Color(0xFF000000);
+  static const Color bluePigment = Color(0xFF272C9A);
+  static const Color chineseBlack = Color(0xFF111111);
+  static const Color gainsboro = Color(0xFFDDDDDD);
+  static const Color persianBlue = Color(0xFF2D33B9);
+  static const Color raisinBlack = Color(0xFF222222);
+  static const Color ultramarineBlue = Color(0xFF454CFF);
+  static const Color white = Color(0xFFffffff);
+}
+
+class AsgardColorsData extends Equatable {
+  const AsgardColorsData({
     required this.accent,
     required this.accentHighlight,
     required this.accentHighlight2,
@@ -14,37 +26,37 @@ class AppColorsData extends Equatable {
     required this.accentOpposite,
   });
 
-  factory AppColorsData.light() => const AppColorsData(
-        accent: Color(0xFF454CFF),
-        accentOpposite: Color(0xFFFFFFFF),
-        accentHighlight: Color(0xFF2D33B9),
-        accentHighlight2: Color(0xFF272C9A),
-        foreground: Color(0xFF000000),
-        background: Color(0xFFFFFFFF),
-        actionBarBackground: Color(0xFF000000),
-        actionBarForeground: Color(0xFFFFFFFF),
+  factory AsgardColorsData.light() => const AsgardColorsData(
+        accent: PaleteColors.ultramarineBlue,
+        accentOpposite: PaleteColors.white,
+        accentHighlight: PaleteColors.persianBlue,
+        accentHighlight2: PaleteColors.bluePigment,
+        foreground: PaleteColors.black,
+        background: PaleteColors.white,
+        actionBarBackground: PaleteColors.black,
+        actionBarForeground: PaleteColors.white,
       );
 
-  factory AppColorsData.dark() => const AppColorsData(
-        accent: Color(0xFF454CFF),
-        accentOpposite: Color(0xFFFFFFFF),
-        accentHighlight: Color(0xFF2D33B9),
-        accentHighlight2: Color(0xFF272C9A),
-        foreground: Color(0xFFFFFFFF),
-        background: Color(0xFF111111),
-        actionBarBackground: Color(0xFF000000),
-        actionBarForeground: Color(0xFFFFFFFF),
+  factory AsgardColorsData.dark() => const AsgardColorsData(
+        accent: PaleteColors.ultramarineBlue,
+        accentOpposite: PaleteColors.white,
+        accentHighlight: PaleteColors.persianBlue,
+        accentHighlight2: PaleteColors.bluePigment,
+        foreground: PaleteColors.white,
+        background: PaleteColors.chineseBlack,
+        actionBarBackground: PaleteColors.black,
+        actionBarForeground: PaleteColors.white,
       );
 
-  factory AppColorsData.highContrast() => const AppColorsData(
-        accent: Color(0xFF000000),
-        accentOpposite: Color(0xFFFFFFFF),
-        accentHighlight: Color(0xFF000000),
-        accentHighlight2: Color(0xFF000000),
-        foreground: Color(0xFF222222),
-        background: Color(0xFFFFFFFF),
-        actionBarBackground: Color(0xFFDDDDDD),
-        actionBarForeground: Color(0xFF222222),
+  factory AsgardColorsData.highContrast() => const AsgardColorsData(
+        accent: PaleteColors.black,
+        accentOpposite: PaleteColors.white,
+        accentHighlight: PaleteColors.black,
+        accentHighlight2: PaleteColors.black,
+        foreground: PaleteColors.raisinBlack,
+        background: PaleteColors.white,
+        actionBarBackground: PaleteColors.gainsboro,
+        actionBarForeground: PaleteColors.raisinBlack,
       );
 
   final Color accent;

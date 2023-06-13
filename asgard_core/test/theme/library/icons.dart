@@ -1,7 +1,7 @@
 part of 'library.dart';
 
 ThemeSection icons(BuildContext context) {
-  final theme = AppTheme.of(context);
+  final theme = AsgardTheme.of(context);
   final icons = theme.icons;
   return ThemeSection(
     title: 'Icons',
@@ -12,10 +12,10 @@ ThemeSection icons(BuildContext context) {
           ...icons.characters.props.map<Widget>(
             (c) => NamedCell(
               value: (c as Named<String>),
-              builder: (context, String v, _) => AppIcon(
+              builder: (context, String v, _) => AsgardIcon(
                 v,
                 color: theme.colors.foreground,
-                size: AppIconSize.small,
+                size: AsgardIconSize.small,
               ),
             ),
           ),
@@ -27,10 +27,10 @@ ThemeSection icons(BuildContext context) {
           ...icons.characters.props.map<Widget>(
             (c) => NamedCell(
               value: (c as Named<String>),
-              builder: (context, String v, _) => AppIcon(
+              builder: (context, String v, _) => AsgardIcon(
                 v,
                 color: theme.colors.foreground,
-                size: AppIconSize.regular,
+                size: AsgardIconSize.regular,
               ),
             ),
           ),

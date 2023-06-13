@@ -12,13 +12,13 @@ class NotificationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     final state =
         context.select((NotificationsState state) => state.lastNotification);
-    return AppNotifiableBar(
+    return AsgardNotifiableBar(
       onClosed: () => context.read<NotificationsNotifier>().close(),
       notification: state != null
-          ? AppNotification(
+          ? AsgardNotification(
               title: state.title,
               description: state.description,
               icon: () {

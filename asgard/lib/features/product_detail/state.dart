@@ -7,7 +7,7 @@ class ProductDetailState extends Equatable {
     required this.product,
   });
 
-  final Product? product;
+  final ProductEntity? product;
 
   @override
   List<Object?> get props => [product];

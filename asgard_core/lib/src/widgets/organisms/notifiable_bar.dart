@@ -1,8 +1,8 @@
 import 'package:asgard_core/asgard_core.dart';
 import 'package:equatable/equatable.dart';
 
-class AppNotification extends Equatable {
-  const AppNotification({
+class AsgardNotification extends Equatable {
+  const AsgardNotification({
     required this.title,
     required this.description,
     required this.icon,
@@ -19,27 +19,27 @@ class AppNotification extends Equatable {
       ];
 }
 
-class AppNotifiableBar extends StatefulWidget {
-  const AppNotifiableBar({
+class AsgardNotifiableBar extends StatefulWidget {
+  const AsgardNotifiableBar({
     Key? key,
     required this.child,
     this.notification,
     this.onClosed,
   }) : super(key: key);
 
-  final AppNotification? notification;
+  final AsgardNotification? notification;
   final VoidCallback? onClosed;
   final Widget child;
 
   @override
-  State<AppNotifiableBar> createState() => _AppNotifiableBarState();
+  State<AsgardNotifiableBar> createState() => _AsgardNotifiableBarState();
 }
 
-class _AppNotifiableBarState extends State<AppNotifiableBar> {
+class _AsgardNotifiableBarState extends State<AsgardNotifiableBar> {
   late bool _isOpened = widget.notification != null;
 
   @override
-  void didUpdateWidget(covariant AppNotifiableBar oldWidget) {
+  void didUpdateWidget(covariant AsgardNotifiableBar oldWidget) {
     super.didUpdateWidget(oldWidget);
 
     if (oldWidget.notification != widget.notification) {
@@ -52,7 +52,7 @@ class _AppNotifiableBarState extends State<AppNotifiableBar> {
   @override
   Widget build(BuildContext context) {
     return _isOpened
-        ? AppNotifiableBarLayout.opened(
+        ? AsgardNotifiableBarLayout.opened(
             notification: widget.notification,
             onClosed: () {
               setState(() {
@@ -62,45 +62,45 @@ class _AppNotifiableBarState extends State<AppNotifiableBar> {
             },
             child: widget.child,
           )
-        : AppNotifiableBarLayout.closed(
+        : AsgardNotifiableBarLayout.closed(
             child: widget.child,
           );
   }
 }
 
-enum AppNotifiableBarState {
+enum AsgardNotifiableBarState {
   opened,
   closed,
 }
 
-class AppNotifiableBarLayout extends StatelessWidget {
-  const AppNotifiableBarLayout.opened({
+class AsgardNotifiableBarLayout extends StatelessWidget {
+  const AsgardNotifiableBarLayout.opened({
     Key? key,
     required this.notification,
     required this.child,
     this.onClosed,
-  })  : _state = AppNotifiableBarState.opened,
+  })  : _state = AsgardNotifiableBarState.opened,
         super(key: key);
 
-  const AppNotifiableBarLayout.closed({
+  const AsgardNotifiableBarLayout.closed({
     Key? key,
     required this.child,
     this.onClosed,
-  })  : _state = AppNotifiableBarState.closed,
+  })  : _state = AsgardNotifiableBarState.closed,
         notification = null,
         super(key: key);
 
-  final AppNotifiableBarState _state;
-  final AppNotification? notification;
+  final AsgardNotifiableBarState _state;
+  final AsgardNotification? notification;
   final VoidCallback? onClosed;
   final Widget child;
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     final notification = this.notification;
     final isOpened =
-        notification != null || _state == AppNotifiableBarState.opened;
+        notification != null || _state == AsgardNotifiableBarState.opened;
 
     return AnimatedContainer(
       duration: theme.durations.regular,
@@ -143,36 +143,36 @@ class _NotificationBody extends StatelessWidget {
     this.onClose,
   }) : super(key: key);
 
-  final AppNotification notification;
+  final AsgardNotification notification;
   final VoidCallback? onClose;
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     return Row(
       children: [
-        AppPadding(
-          padding: const AppEdgeInsets.regular(),
-          child: AppIcon.regular(
+        AsgardPadding(
+          padding: const AsgardEdgeInsets.regular(),
+          child: AsgardIcon.regular(
             notification.icon,
             color: theme.colors.accentOpposite,
           ),
         ),
         Expanded(
-          child: AppPadding(
-            padding: const AppEdgeInsets.symmetric(
+          child: AsgardPadding(
+            padding: const AsgardEdgeInsets.symmetric(
               vertical: AppGapSize.regular,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                AppText.title3(
+                AsgardText.title3(
                   notification.title,
                   color: theme.colors.accentOpposite,
                   maxLines: 1,
                 ),
-                AppText.paragraph1(
+                AsgardText.paragraph1(
                   notification.description,
                   color: theme.colors.accentOpposite,
                   maxLines: 1,
@@ -181,7 +181,7 @@ class _NotificationBody extends StatelessWidget {
             ),
           ),
         ),
-        AppActionButton(
+        AsgardActionButton(
           icon: theme.icons.characters.dismiss,
           onTap: onClose,
         ),

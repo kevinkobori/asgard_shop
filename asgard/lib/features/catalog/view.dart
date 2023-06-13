@@ -40,7 +40,7 @@ class CatalogMobileLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final products = context.select((CatalogState state) => state.products);
-    return AppScaffold(
+    return AsgardScaffold(
       body: _BodyWithProducts(
         products: products,
         onViewProduct: onViewProduct,
@@ -58,7 +58,7 @@ class _BodyWithProducts extends StatefulWidget {
   }) : super(key: key);
 
   final ValueChanged<String> onViewProduct;
-  final List<Product> products;
+  final List<ProductEntity> products;
 
   @override
   State<_BodyWithProducts> createState() => _BodyWithProductsState();
@@ -76,7 +76,7 @@ class _BodyWithProductsState extends State<_BodyWithProducts> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     return LayoutBuilder(builder: (context, constraints) {
       return CustomScrollView(
         controller: _controller,
@@ -88,7 +88,7 @@ class _BodyWithProductsState extends State<_BodyWithProducts> {
           ),
           SliverSafeArea(
             top: false,
-            sliver: AppTileSliverGrid(
+            sliver: AsgardTileSliverGrid(
               padding: EdgeInsets.only(
                 left: theme.spacing.semiBig,
                 top: theme.spacing.semiBig,

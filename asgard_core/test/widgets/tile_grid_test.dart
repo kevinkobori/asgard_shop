@@ -1,5 +1,6 @@
 import 'package:asgard_core/asgard_core.dart';
 import 'package:test_utils/test_utils.dart';
+
 import '../base/widget.dart';
 
 void main() async {
@@ -8,7 +9,7 @@ void main() async {
     {
       'products': const CustomScrollView(
         slivers: [
-          AppTileSliverGrid(
+          AsgardTileSliverGrid(
             children: [
               ProductTileLayout.idle(
                 name: 'Dog 1',

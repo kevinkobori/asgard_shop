@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
-class Product extends Equatable {
-  const Product({
+class ProductEntity extends Equatable {
+  const ProductEntity({
     required this.id,
     required this.image,
     required this.name,

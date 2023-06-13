@@ -1,18 +1,18 @@
 import 'package:asgard/services/services.dart';
 import 'package:asgard_core/asgard_core.dart';
-import 'package:equatable/equatable.dart';
 import 'package:collection/collection.dart';
+import 'package:equatable/equatable.dart';
 
 class CatalogState extends Equatable {
   const CatalogState({
     required this.products,
   });
 
-  final List<Product> products;
+  final List<ProductEntity> products;
 
   factory CatalogState.demo() => const CatalogState(
         products: [
-          Product(
+          ProductEntity(
             id: '001',
             image: 'https://picsum.photos/id/10/200/300',
             name: 'Kygnor',
@@ -21,7 +21,7 @@ class CatalogState extends Equatable {
             price: 100,
             imageAspectRatio: 0.9,
           ),
-          Product(
+          ProductEntity(
             id: '002',
             image: 'https://picsum.photos/id/20/200/300',
             name: 'Viktar',
@@ -30,7 +30,7 @@ class CatalogState extends Equatable {
             price: 68,
             imageAspectRatio: 0.7,
           ),
-          Product(
+          ProductEntity(
             id: '003',
             image: 'https://picsum.photos/id/30/200/300',
             name: 'Jvynir',
@@ -39,7 +39,7 @@ class CatalogState extends Equatable {
             price: 240,
             imageAspectRatio: 0.8,
           ),
-          Product(
+          ProductEntity(
             id: '004',
             image: 'https://picsum.photos/id/40/200/300',
             name: 'Mulnir',
@@ -48,7 +48,7 @@ class CatalogState extends Equatable {
             price: 32,
             imageAspectRatio: 0.6,
           ),
-          Product(
+          ProductEntity(
             id: '005',
             image: 'https://picsum.photos/id/50/200/300',
             name: 'Magnar',
@@ -57,7 +57,7 @@ class CatalogState extends Equatable {
             price: 120,
             imageAspectRatio: 0.5,
           ),
-          Product(
+          ProductEntity(
             id: '006',
             image: 'https://picsum.photos/id/60/200/300',
             name: 'Oknaar',
@@ -66,7 +66,7 @@ class CatalogState extends Equatable {
             price: 172,
             imageAspectRatio: 0.76,
           ),
-          Product(
+          ProductEntity(
             id: '007',
             image: 'https://picsum.photos/id/70/200/300',
             name: 'Oknaar',
@@ -78,7 +78,7 @@ class CatalogState extends Equatable {
         ],
       );
 
-  Product? getProduct(String id) => products.firstWhereOrNull(
+  ProductEntity? getProduct(String id) => products.firstWhereOrNull(
         (product) => product.id == id,
       );
 

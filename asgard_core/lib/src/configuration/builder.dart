@@ -1,15 +1,17 @@
-import 'package:asgard_core/src/theme/responsive_theme.dart';
-import 'package:asgard_core/src/theme/theme.dart';
+// library asgard_app;
+
+// import 'dart:math' as math;
+
+import 'package:asgard_core/asgard_core.dart';
 import 'package:flutter/cupertino.dart' as cupertino;
 import 'package:flutter/material.dart' as material;
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'molecules/buttons/button.dart';
+// part 'scaffold.dart';
 
-class AppBase extends StatelessWidget {
-  const AppBase({
+class AsgardBuilder extends StatelessWidget {
+  const AsgardBuilder({
     Key? key,
     required this.routerDelegate,
     required this.routeInformationParser,
@@ -38,7 +40,7 @@ class AppBase extends StatelessWidget {
     this.colorMode,
   }) : super(key: key);
 
-  final AppThemeColorMode? colorMode;
+  final AsgardThemeColorMode? colorMode;
   final Iterable<LocalizationsDelegate<dynamic>>? localizationsDelegates;
   final bool useInheritedMediaQuery;
   final bool debugShowGrid;
@@ -83,8 +85,8 @@ class AppBase extends StatelessWidget {
 
   Widget _inspectorSelectButtonBuilder(
       BuildContext context, VoidCallback onPressed) {
-    final theme = AppTheme.of(context);
-    return AppButton(
+    final theme = AsgardTheme.of(context);
+    return AsgardButton(
       onTap: onPressed,
       icon: theme.icons.characters.addProduct,
     );
@@ -97,12 +99,12 @@ class AppBase extends StatelessWidget {
   }
 
   Widget _buildWidgetApp(BuildContext context) {
-    Widget result = AppResponsiveTheme(
+    Widget result = AsgardResponsiveTheme(
       appLogo: appLogo,
       darkAppLogo: darkAppLogo,
       colorMode: colorMode,
       child: cupertino.Builder(builder: (context) {
-        final theme = AppTheme.of(context);
+        final theme = AsgardTheme.of(context);
         return WidgetsApp.router(
           key: GlobalObjectKey(this),
           routeInformationProvider: routeInformationProvider,
@@ -198,7 +200,7 @@ class _ScrollBehaviour extends ScrollBehavior {
 
   @override
   TargetPlatform getPlatform(BuildContext context) =>
-      AppTheme.of(context).platform;
+      AsgardTheme.of(context).platform;
 
   @override
   Widget buildScrollbar(
@@ -225,7 +227,7 @@ class _ScrollBehaviour extends ScrollBehavior {
   @override
   Widget buildOverscrollIndicator(
       BuildContext context, Widget child, ScrollableDetails details) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     final indicator = _androidOverscrollIndicator ?? androidOverscrollIndicator;
     switch (getPlatform(context)) {
       case TargetPlatform.iOS:

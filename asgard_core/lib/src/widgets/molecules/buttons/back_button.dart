@@ -3,8 +3,8 @@ import 'package:flutter/widgets.dart';
 
 import 'action_button.dart';
 
-class AppBackButton extends StatelessWidget {
-  const AppBackButton({
+class AsgardBackButton extends StatelessWidget {
+  const AsgardBackButton({
     Key? key,
     this.onTap,
   }) : super(key: key);
@@ -13,8 +13,8 @@ class AppBackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
-    return AppActionButton(
+    final theme = AsgardTheme.of(context);
+    return AsgardActionButton(
       icon: theme.icons.characters.arrowBack,
       onTap: onTap ?? () => Navigator.pop(context),
     );

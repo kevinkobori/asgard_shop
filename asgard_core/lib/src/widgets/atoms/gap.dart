@@ -12,7 +12,7 @@ enum AppGapSize {
 }
 
 extension AppGapSizeExtension on AppGapSize {
-  double getSpacing(AppThemeData theme) {
+  double getSpacing(AsgardThemeData theme) {
     switch (this) {
       case AppGapSize.none:
         return 0;
@@ -30,33 +30,33 @@ extension AppGapSizeExtension on AppGapSize {
   }
 }
 
-class AppGap extends StatelessWidget {
-  const AppGap(
+class AsgardGap extends StatelessWidget {
+  const AsgardGap(
     this.size, {
     Key? key,
   }) : super(key: key);
 
-  const AppGap.small({
+  const AsgardGap.small({
     Key? key,
   })  : size = AppGapSize.small,
         super(key: key);
 
-  const AppGap.semiSmall({
+  const AsgardGap.semiSmall({
     Key? key,
   })  : size = AppGapSize.semiSmall,
         super(key: key);
 
-  const AppGap.regular({
+  const AsgardGap.regular({
     Key? key,
   })  : size = AppGapSize.regular,
         super(key: key);
 
-  const AppGap.semiBig({
+  const AsgardGap.semiBig({
     Key? key,
   })  : size = AppGapSize.semiBig,
         super(key: key);
 
-  const AppGap.big({
+  const AsgardGap.big({
     Key? key,
   })  : size = AppGapSize.big,
         super(key: key);
@@ -65,7 +65,7 @@ class AppGap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     return Gap(size.getSpacing(theme));
   }
 }

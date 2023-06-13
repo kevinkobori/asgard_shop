@@ -3,8 +3,8 @@ import 'package:flutter/widgets.dart';
 
 import 'padding.dart';
 
-class AppContainer extends StatelessWidget {
-  const AppContainer({
+class AsgardContainer extends StatelessWidget {
+  const AsgardContainer({
     Key? key,
     this.width,
     this.height,
@@ -20,8 +20,8 @@ class AppContainer extends StatelessWidget {
     this.child,
   }) : super(key: key);
 
-  final AppEdgeInsets? padding;
-  final AppEdgeInsets? margin;
+  final AsgardEdgeInsets? padding;
+  final AsgardEdgeInsets? margin;
   final Decoration? decoration;
   final Decoration? foregroundDecoration;
   final double? width;
@@ -35,7 +35,7 @@ class AppContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     return Container(
       width: width,
       height: height,

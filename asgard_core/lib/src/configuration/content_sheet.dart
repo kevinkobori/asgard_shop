@@ -2,8 +2,8 @@ import 'package:asgard_core/src/theme/theme.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 
-class AppContentSheet extends StatelessWidget {
-  const AppContentSheet({
+class AsgardContentSheet extends StatelessWidget {
+  const AsgardContentSheet({
     Key? key,
     required this.children,
   }) : super(key: key);
@@ -12,7 +12,7 @@ class AppContentSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AppTheme.of(context);
+    final theme = AsgardTheme.of(context);
     final mediaQuery = MediaQuery.of(context);
     final route = ModalRoute.of(context);
     return SlideTransition(

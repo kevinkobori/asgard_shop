@@ -1,14 +1,14 @@
 import 'package:asgard_core/src/utils/named.dart';
 import 'package:equatable/equatable.dart';
 
-class AppDurationsData extends Equatable {
-  const AppDurationsData({
+class AsgardDurationsData extends Equatable {
+  const AsgardDurationsData({
     required this.areAnimationEnabled,
     required this.regular,
     required this.quick,
   });
 
-  factory AppDurationsData.regular() => const AppDurationsData(
+  factory AsgardDurationsData.regular() => const AsgardDurationsData(
         areAnimationEnabled: true,
         regular: Duration(milliseconds: 250),
         quick: Duration(milliseconds: 100),
