@@ -12,6 +12,7 @@ class PaleteColors {
   static const Color raisinBlack = Color(0xFF222222);
   static const Color ultramarineBlue = Color(0xFF454CFF);
   static const Color white = Color(0xFFffffff);
+  static const Color teslaRed = Color(0xFFE31937);
 }
 
 class AsgardColorsData extends Equatable {

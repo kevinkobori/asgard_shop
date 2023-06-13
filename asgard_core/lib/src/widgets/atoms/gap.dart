@@ -11,7 +11,7 @@ enum AppGapSize {
   big,
 }
 
-extension AppGapSizeExtension on AppGapSize {
+extension AsgardGapSizeExtension on AppGapSize {
   double getSpacing(AsgardThemeData theme) {
     switch (this) {
       case AppGapSize.none:

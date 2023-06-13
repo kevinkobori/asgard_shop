@@ -41,7 +41,7 @@ class AsgardNavigationBar extends StatelessWidget {
               ),
             ],
           ),
-        const AsgardGap.standard(),
+        const AsgardGap.regular(),
         if (action == null) body,
         if (action != null)
           Expanded(
@@ -65,7 +65,7 @@ class AsgardNavigationBar extends StatelessWidget {
               ],
             ),
           ),
-        const AsgardGap.standard(),
+        const AsgardGap.regular(),
         if (action == null) summary,
         if (action != null)
           Stack(
@@ -112,13 +112,13 @@ class AsgardNavigationBar extends StatelessWidget {
             ),
           ],
         ),
-        const AsgardGap.standard(),
+        const AsgardGap.regular(),
         if (canNavigateBack) Expanded(child: summary),
         if (!canNavigateBack)
           Expanded(
             child: body,
           ),
-        const AsgardGap.standard(),
+        const AsgardGap.regular(),
         if (!canNavigateBack) summary,
         if (canNavigateBack && action != null) action,
       ],

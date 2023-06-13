@@ -25,7 +25,7 @@ class AsgardSpacingData extends Equatable {
   final double semiBig;
   final double big;
 
-  AsgardEdgeInsetsSpacingData asInsets() => AsgardEdgeInsetsSpacingData(this);
+  _AsgardEdgeInsetsSpacingData asInsets() => _AsgardEdgeInsetsSpacingData(this);
 
   @override
   List<Object?> get props => [
@@ -37,8 +37,8 @@ class AsgardSpacingData extends Equatable {
       ];
 }
 
-class AsgardEdgeInsetsSpacingData extends Equatable {
-  const AsgardEdgeInsetsSpacingData(this._spacing);
+class _AsgardEdgeInsetsSpacingData extends Equatable {
+  const _AsgardEdgeInsetsSpacingData(this._spacing);
 
   EdgeInsets get small => EdgeInsets.all(_spacing.small);
   EdgeInsets get semiSmall => EdgeInsets.all(_spacing.semiSmall);

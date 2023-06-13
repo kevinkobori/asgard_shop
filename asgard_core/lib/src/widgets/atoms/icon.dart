@@ -7,7 +7,7 @@ enum AsgardIconSize {
   big,
 }
 
-extension AppIconSizeExtension on AsgardIconSizesData {
+extension AsgardIconSizeExtension on AsgardIconSizesData {
   double resolve(AsgardIconSize size) {
     switch (size) {
       case AsgardIconSize.small:

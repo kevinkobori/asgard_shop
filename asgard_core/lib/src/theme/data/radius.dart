@@ -18,7 +18,7 @@ class AsgardRadiusData extends Equatable {
   final Radius regular;
   final Radius big;
 
-  AsgardBorderRadiusData asBorderRadius() => AsgardBorderRadiusData(this);
+  _AsgardBorderRadiusData asBorderRadius() => _AsgardBorderRadiusData(this);
 
   @override
   List<Object?> get props => [
@@ -28,8 +28,8 @@ class AsgardRadiusData extends Equatable {
       ];
 }
 
-class AsgardBorderRadiusData extends Equatable {
-  const AsgardBorderRadiusData(this._radius);
+class _AsgardBorderRadiusData extends Equatable {
+  const _AsgardBorderRadiusData(this._radius);
 
   BorderRadius get small => BorderRadius.all(_radius.small);
   BorderRadius get regular => BorderRadius.all(_radius.regular);
