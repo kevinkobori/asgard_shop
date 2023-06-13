@@ -32,13 +32,13 @@ class AsgardThemeData extends Equatable {
   }) =>
       AsgardThemeData(
         formFactor: AsgardFormFactor.medium,
-        icons: AsgardIconsData.regular(),
-        typography: AsgardTypographyData.regular(),
+        icons: AsgardIconsData.standard(),
+        typography: AsgardTypographyData.standard(),
         colors: AsgardColorsData.light(),
-        radius: const AsgardRadiusData.regular(),
-        spacing: AsgardSpacingData.regular(),
-        shadow: AsgardShadowsData.regular(),
-        durations: AsgardDurationsData.regular(),
+        radius: const AsgardRadiusData.standard(),
+        spacing: AsgardSpacingData.standard(),
+        shadow: AsgardShadowsData.standard(),
+        durations: AsgardDurationsData.standard(),
         images: AsgardImagesData.regular(
           appLogo: appLogo,
         ),

@@ -11,7 +11,7 @@ class AsgardSpacingData extends Equatable {
     required this.big,
   });
 
-  factory AsgardSpacingData.regular() => const AsgardSpacingData(
+  factory AsgardSpacingData.standard() => const AsgardSpacingData(
         small: 4,
         semiSmall: 8,
         regular: 12,

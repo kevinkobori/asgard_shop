@@ -9,7 +9,7 @@ class AsgardRadiusData extends Equatable {
     required this.big,
   });
 
-  const AsgardRadiusData.regular()
+  const AsgardRadiusData.standard()
       : small = const Radius.circular(10),
         regular = const Radius.circular(12),
         big = const Radius.circular(16);

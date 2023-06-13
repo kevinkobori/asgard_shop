@@ -8,7 +8,7 @@ class AsgardDurationsData extends Equatable {
     required this.quick,
   });
 
-  factory AsgardDurationsData.regular() => const AsgardDurationsData(
+  factory AsgardDurationsData.standard() => const AsgardDurationsData(
         areAnimationEnabled: true,
         regular: Duration(milliseconds: 250),
         quick: Duration(milliseconds: 100),

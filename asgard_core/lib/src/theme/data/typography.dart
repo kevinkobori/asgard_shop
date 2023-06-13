@@ -11,7 +11,7 @@ class AsgardTypographyData extends Equatable {
     required this.title3,
   });
 
-  factory AsgardTypographyData.regular() => const AsgardTypographyData(
+  factory AsgardTypographyData.standard() => const AsgardTypographyData(
         paragraph1: TextStyle(
           fontFamily: 'Poppins',
           package: 'asgard_core',

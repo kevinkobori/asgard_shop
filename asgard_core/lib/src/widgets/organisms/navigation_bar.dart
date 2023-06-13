@@ -41,7 +41,7 @@ class AsgardNavigationBar extends StatelessWidget {
               ),
             ],
           ),
-        const AsgardGap.regular(),
+        const AsgardGap.standard(),
         if (action == null) body,
         if (action != null)
           Expanded(
@@ -65,7 +65,7 @@ class AsgardNavigationBar extends StatelessWidget {
               ],
             ),
           ),
-        const AsgardGap.regular(),
+        const AsgardGap.standard(),
         if (action == null) summary,
         if (action != null)
           Stack(
@@ -112,13 +112,13 @@ class AsgardNavigationBar extends StatelessWidget {
             ),
           ],
         ),
-        const AsgardGap.regular(),
+        const AsgardGap.standard(),
         if (canNavigateBack) Expanded(child: summary),
         if (!canNavigateBack)
           Expanded(
             child: body,
           ),
-        const AsgardGap.regular(),
+        const AsgardGap.standard(),
         if (!canNavigateBack) summary,
         if (canNavigateBack && action != null) action,
       ],
@@ -148,7 +148,7 @@ class NavigationBarContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = AsgardTheme.of(context);
     return AsgardContainer(
-      padding: const AsgardEdgeInsets.regular(),
+      padding: const AsgardEdgeInsets.standard(),
       decoration: BoxDecoration(
         color: theme.colors.actionBarBackground,
         borderRadius: theme.radius.asBorderRadius().regular,

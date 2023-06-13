@@ -10,11 +10,11 @@ class AsgardIconsData extends Equatable {
   });
 
   /// Icons have been exported with "Export Icon Font" Figma plugin.
-  factory AsgardIconsData.regular() => AsgardIconsData(
+  factory AsgardIconsData.standard() => AsgardIconsData(
         fontFamily: 'asgard_icons',
         fontPackage: 'asgard_core',
-        characters: AsgardIconCharactersData.regular(),
-        sizes: AsgardIconSizesData.regular(),
+        characters: AsgardIconCharactersData.standard(),
+        sizes: AsgardIconSizesData.standard(),
       );
 
   final String fontFamily;
@@ -42,7 +42,7 @@ class AsgardIconCharactersData extends Equatable {
     required this.shoppingCart,
   });
 
-  factory AsgardIconCharactersData.regular() => AsgardIconCharactersData(
+  factory AsgardIconCharactersData.standard() => AsgardIconCharactersData(
         addProduct: String.fromCharCodes([57344, 58343, 58413, 57568]),
         arrowBack: String.fromCharCodes([57344, 58537, 59260, 57572]),
         dismiss: String.fromCharCodes([57344, 57911, 61195, 57514]),
@@ -78,7 +78,7 @@ class AsgardIconSizesData extends Equatable {
     required this.big,
   });
 
-  factory AsgardIconSizesData.regular() => const AsgardIconSizesData(
+  factory AsgardIconSizesData.standard() => const AsgardIconSizesData(
         small: 16.0,
         regular: 22.0,
         big: 32.0,

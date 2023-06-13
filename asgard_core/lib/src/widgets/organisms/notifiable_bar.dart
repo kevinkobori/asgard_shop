@@ -152,7 +152,7 @@ class _NotificationBody extends StatelessWidget {
     return Row(
       children: [
         AsgardPadding(
-          padding: const AsgardEdgeInsets.regular(),
+          padding: const AsgardEdgeInsets.standard(),
           child: AsgardIcon.regular(
             notification.icon,
             color: theme.colors.accentOpposite,

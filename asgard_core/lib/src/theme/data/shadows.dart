@@ -5,7 +5,7 @@ import 'package:flutter/rendering.dart';
 class AsgardShadowsData extends Equatable {
   const AsgardShadowsData({required this.big});
 
-  factory AsgardShadowsData.regular() => const AsgardShadowsData(
+  factory AsgardShadowsData.standard() => const AsgardShadowsData(
         big: BoxShadow(
           blurRadius: 32,
           color: Color(0x44000000),

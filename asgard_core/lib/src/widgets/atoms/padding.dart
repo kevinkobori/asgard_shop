@@ -38,7 +38,7 @@ class AsgardEdgeInsets extends Equatable {
         right = AppGapSize.semiSmall,
         bottom = AppGapSize.semiSmall;
 
-  const AsgardEdgeInsets.regular()
+  const AsgardEdgeInsets.standard()
       : left = AppGapSize.regular,
         top = AppGapSize.regular,
         right = AppGapSize.regular,
