@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:asgard_core/asgard_core.dart';
+import 'package:asgard_core/_internal.dart';
 
 class TransparentPage<T> extends Page<T> {
   const TransparentPage({

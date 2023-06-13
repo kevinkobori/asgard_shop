@@ -1,4 +1,4 @@
-import 'package:asgard_core/asgard_core.dart';
+import 'package:asgard_core/_internal.dart';
 import 'package:test_utils/test_utils.dart';
 
 import '../base/widget.dart';

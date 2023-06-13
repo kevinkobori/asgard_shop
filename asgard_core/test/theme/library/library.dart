@@ -1,4 +1,4 @@
-import 'package:asgard_core/asgard_core.dart';
+import 'package:asgard_core/_internal.dart';
 import 'package:asgard_core/src/utils/named.dart';
 import 'package:flutter/material.dart' as material;
 import 'package:flutter_svg/flutter_svg.dart';

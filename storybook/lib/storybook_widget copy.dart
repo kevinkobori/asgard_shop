@@ -1,4 +1,4 @@
-// import 'package:asgard_core/asgard_core.dart';
+// import 'package:asgard_core/_internal.dart';
 // import 'package:flutter/material.dart';
 // import 'package:widgetbook/widgetbook.dart';
 

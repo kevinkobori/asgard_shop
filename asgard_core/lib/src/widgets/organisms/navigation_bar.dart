@@ -1,4 +1,4 @@
-import 'package:asgard_core/asgard_core.dart';
+import 'package:asgard_core/_internal.dart';
 
 class AsgardNavigationBar extends StatelessWidget {
   const AsgardNavigationBar({

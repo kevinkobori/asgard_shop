@@ -2,7 +2,7 @@
 
 // import 'dart:math' as math;
 
-import 'package:asgard_core/asgard_core.dart';
+import 'package:asgard_core/_internal.dart';
 import 'package:flutter/cupertino.dart' as cupertino;
 import 'package:flutter/material.dart' as material;
 import 'package:flutter/services.dart';
@@ -10,8 +10,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 // part 'scaffold.dart';
 
-class AsgardBuilder extends StatelessWidget {
-  const AsgardBuilder({
+class AsgardAppBuilder extends StatelessWidget {
+  const AsgardAppBuilder({
     Key? key,
     required this.routerDelegate,
     required this.routeInformationParser,

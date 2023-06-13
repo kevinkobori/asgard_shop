@@ -43,7 +43,7 @@ class AsgardApp extends StatelessWidget {
           create: (context) => CartNotifier.demo(),
           child: StateProvider<AccountState, AccountNotifier>(
             create: (context) => AccountNotifier.demo(),
-            child: AsgardBuilder(
+            child: AsgardAppBuilder(
               debugShowCheckedModeBanner: false,
               colorMode: AsgardThemeColorMode.light,
               appLogo: ExactAssetPicture(

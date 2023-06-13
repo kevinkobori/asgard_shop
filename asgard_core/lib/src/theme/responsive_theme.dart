@@ -45,7 +45,7 @@ class AsgardResponsiveTheme extends StatelessWidget {
   static AsgardFormFactor formFactorOf(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
 
-    if (mediaQuery.size.width < 200) {
+    if (mediaQuery.size.width < 400) {
       return AsgardFormFactor.small;
     }
 

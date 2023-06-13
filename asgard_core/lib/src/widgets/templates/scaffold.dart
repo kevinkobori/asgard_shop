@@ -15,7 +15,7 @@ import 'dart:math' as math;
 //   ),
 // );
 
-import 'package:asgard_core/asgard_core.dart';
+import 'package:asgard_core/_internal.dart';
 
 class AsgardScaffold extends StatelessWidget {
   final Widget body;

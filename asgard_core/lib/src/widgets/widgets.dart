@@ -1,4 +1,4 @@
-export '../configuration/builder.dart' show AsgardBuilder;
+export '../configuration/app_builder.dart' show AsgardAppBuilder;
 export '../configuration/content_sheet.dart' show AsgardContentSheet;
 export 'atoms/container.dart';
 export 'atoms/gap.dart';

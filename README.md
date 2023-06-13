@@ -17,7 +17,7 @@ Documents :
         - import '../../src/theme/responsive_theme.dart';
         - import 'package:asgard_core/src/theme/responsive_theme.dart';
     - Right way:
-        - import 'package:asgard_core/asgard_core.dart';
+        - import 'package:asgard_core/_internal.dart';
         
 ## Context Access all Design System properties and components
 - remove maximum layout controller from developer

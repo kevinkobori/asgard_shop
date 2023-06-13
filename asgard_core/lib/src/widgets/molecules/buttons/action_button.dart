@@ -1,4 +1,4 @@
-import 'package:asgard_core/asgard_core.dart';
+import 'package:asgard_core/_internal.dart';
 import 'package:tap_builder/tap_builder.dart';
 
 class AsgardActionButton extends StatelessWidget {
@@ -13,7 +13,7 @@ class AsgardActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TapBuilder(
+    return AsgardTapBuilder(
       onTap: onTap,
       builder: (context, state, hasFocus) {
         switch (state) {
