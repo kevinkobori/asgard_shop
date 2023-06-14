@@ -1,7 +1,4 @@
-import 'package:asgard_core/src/theme/theme.dart';
-import 'package:flutter/widgets.dart';
-
-import 'action_button.dart';
+import 'package:asgard_core/_internal.dart';
 
 class AsgardBackButton extends StatelessWidget {
   const AsgardBackButton({

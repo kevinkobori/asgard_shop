@@ -46,8 +46,6 @@ class ProductDetailLayout extends StatelessWidget {
     final theme = AsgardTheme.of(context);
     final product = context.select((ProductDetailState state) => state.product);
 
-    // return context.components.templates.appScaffold();
-    // return ElevatedButton(onPressed: () {}, child: Container());
     return AsgardScaffold(
       floatingBar: const ProductDetailNavigationBar(),
       backgroundColor: theme.colors.background.withAlpha(0),

@@ -13,8 +13,6 @@ class AsgardTapBuilder extends TapBuilder {
     bool canRequestFocus = true,
     ValueChanged<bool>? onFocusChange,
     bool autofocus = false,
-    FocusOnKeyCallback? onKey,
-    FocusOnKeyEventCallback? onKeyEvent,
   }) : super(
           builder: builder,
           key: key,
@@ -27,7 +25,5 @@ class AsgardTapBuilder extends TapBuilder {
           canRequestFocus: canRequestFocus,
           onFocusChange: onFocusChange,
           autofocus: autofocus,
-          onKey: onKey,
-          onKeyEvent: onKeyEvent,
         );
 }

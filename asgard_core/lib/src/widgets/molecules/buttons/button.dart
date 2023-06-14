@@ -1,5 +1,4 @@
 import 'package:asgard_core/_internal.dart';
-import 'package:tap_builder/tap_builder.dart';
 
 class AsgardButton extends StatelessWidget {
   const AsgardButton({
