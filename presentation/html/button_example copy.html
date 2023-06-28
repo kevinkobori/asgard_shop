@@ -1,0 +1,57 @@
+<!-- /* [0 - html] */ -->
+<!DOCTYPE html>
+<head>
+  <!-- /* [1 - header title] */ -->
+  <title>Button Example</title>
+</head>
+<body>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  
+    .Column {
+      display: flex;
+      flex-direction: column;
+      /* [X - Y] */
+      align-items: center;
+    }
+
+    .Text {
+      font-size: 64px;
+    }
+  </style>
+  
+  <div class="Column">
+  <!-- /* [X - Children:] */ -->
+    <p class="Text">
+      N = <span id="counter">0</span>
+    </p>
+    <button 
+      id="OutlinedButton"
+      class="Text">N++
+    </button>
+  </div>
+  
+  <script>
+    const outlinedButton = document.getElementById('OutlinedButton');
+    const _counterSpan = document.getElementById('counter');
+    let counterValue = 0;
+
+    function incrementCounter() {
+      counterValue++;
+
+      /// recria o componente "_counterSpan" com o novo valor de "counterValue";
+      _counterSpan.innerHTML = counterValue;
+    }
+  
+    /// 'click' == onPressed
+    outlinedButton.addEventListener('click', () => {
+      incrementCounter();
+    });
+  </script>
+</body>
+</html>

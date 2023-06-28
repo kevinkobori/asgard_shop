@@ -4,6 +4,7 @@ import 'package:asgard_core/_internal.dart';
 
 class TransparentPage<T> extends Page<T> {
   const TransparentPage({
+    required this.onTap,
     required this.child,
     LocalKey? key,
     String? name,
@@ -15,29 +16,37 @@ class TransparentPage<T> extends Page<T> {
             arguments: arguments,
             restorationId: restorationId);
 
+  final VoidCallback onTap;
+
   /// The content to be shown in the [Route] created by this page.
   final Widget child;
 
   @override
   Route<T> createRoute(BuildContext context) {
     final theme = AsgardTheme.of(context);
+    const blurScale = 16;
     return PageRouteBuilder(
       transitionDuration: theme.durations.regular,
       opaque: false,
       maintainState: true,
       settings: this,
       barrierColor: theme.colors.foreground.withOpacity(0.5),
-      pageBuilder: (BuildContext context, Animation<double> animation,
-          Animation<double> secondaryAnimation) {
+      pageBuilder:
+          (BuildContext _, Animation<double> _animation, Animation<double> __) {
         return AnimatedBuilder(
-          animation: animation,
+          animation: _animation,
           child: child,
-          builder: (context, child) => BackdropFilter(
-            filter: ImageFilter.blur(
-              sigmaX: 20 * animation.value,
-              sigmaY: 20 * animation.value,
-            ),
-            child: child,
+          builder: (_, _child) => AsgardTapBuilder(
+            onTap: onTap,
+            builder: (context, state, hasFocus) {
+              return BackdropFilter(
+                filter: ImageFilter.blur(
+                  sigmaX: blurScale * _animation.value,
+                  sigmaY: blurScale * _animation.value,
+                ),
+                child: _child,
+              );
+            },
           ),
         );
       },

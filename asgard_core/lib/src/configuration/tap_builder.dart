@@ -3,7 +3,9 @@ import 'package:asgard_core/_internal.dart';
 class AsgardTapBuilder extends TapBuilder {
   const AsgardTapBuilder({
     Key? key,
-    required Widget Function(BuildContext, TapState, bool) builder,
+    required Widget Function(
+            BuildContext _context, TapState _state, bool _isFocused)
+        builder,
     VoidCallback? onTap,
     VoidCallback? onLongPress,
     TapMouseCursorBuilder mouseCursorBuilder = defaultMouseCursorBuilder,

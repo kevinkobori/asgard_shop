@@ -1,4 +1,4 @@
-import 'package:asgard_core/src/theme/theme.dart';
+import 'package:asgard_core/src/design_system/theme/theme.dart';
 import 'package:flutter/widgets.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 

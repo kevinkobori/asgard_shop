@@ -1,7 +1,7 @@
 import 'package:asgard/features/account/state.dart';
 import 'package:asgard/features/cart/state.dart';
+import 'package:asgard/features/catalog/page.dart';
 import 'package:asgard/features/catalog/state.dart';
-import 'package:asgard/features/catalog/view.dart';
 import 'package:asgard/features/notifications/state.dart';
 import 'package:provider/provider.dart';
 

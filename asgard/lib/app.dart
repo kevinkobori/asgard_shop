@@ -1,6 +1,6 @@
 import 'package:asgard/features/account/state.dart';
 import 'package:asgard/features/cart/state.dart';
-import 'package:asgard/features/catalog/view.dart';
+import 'package:asgard/features/catalog/page.dart';
 import 'package:asgard/features/notifications/state.dart';
 import 'package:asgard_core/asgard_core.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -8,7 +8,7 @@ import 'package:go_router/go_router.dart';
 
 import 'base/state_provider.dart';
 import 'features/catalog/state.dart';
-import 'features/product_detail/view.dart';
+import 'features/product_details/page.dart';
 
 class AsgardApp extends StatelessWidget {
   AsgardApp({
@@ -19,13 +19,14 @@ class AsgardApp extends StatelessWidget {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => const CatalogView(),
+        builder: (context, state) => const CatalogPage(),
       ),
       GoRoute(
         path: '/detail/:id',
         pageBuilder: (context, state) => TransparentPage<void>(
           key: state.pageKey,
-          child: ProductDetailView(
+          onTap: context.pop,
+          child: ProductDetailsPage(
             productId: state.pathParameters['id']!,
           ),
         ),
@@ -45,7 +46,7 @@ class AsgardApp extends StatelessWidget {
             create: (context) => AccountNotifier.demo(),
             child: AsgardAppBuilder(
               debugShowCheckedModeBanner: false,
-              colorMode: AsgardThemeColorMode.light,
+              colorMode: AsgardThemeColorMode.dark,
               appLogo: ExactAssetPicture(
                 SvgPicture.svgStringDecoderBuilder,
                 'assets/images/logo.svg',

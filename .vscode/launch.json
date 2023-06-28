@@ -10,6 +10,24 @@
             "request": "launch",
             "program": "asgard/lib/main.dart",
         },
+        {
+            "name": "Animated Container Example",
+            "type": "dart",
+            "request": "launch",
+            "program": "flutter_examples/lib/animated_container/main.dart",
+        },
+        {
+            "name": "Counter Example",
+            "type": "dart",
+            "request": "launch",
+            "program": "flutter_examples/lib/counter/main.dart",
+        },
+        {
+            "name": "Hello Word Example",
+            "type": "dart",
+            "request": "launch",
+            "program": "presentation/flutter_examples/lib/hello_word/main.dart",
+        },
         // {
         //     "name": "Asgard for Web",
         //     "type": "dart",
