@@ -1,5 +1,4 @@
 import 'package:darwin_core/darwin_core.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CatalogHeader extends StatelessWidget {
   const CatalogHeader({
@@ -23,7 +22,7 @@ class CatalogHeader extends StatelessWidget {
           child: Container(
             height: theme.typography.title1.fontSize! * 1.5,
             alignment: Alignment.centerLeft,
-            child: SvgPicture(theme.images.appLogo),
+            // child: SvgPicture(theme.images.appLogo),
           ),
         ),
       ),
@@ -34,13 +33,13 @@ class CatalogHeader extends StatelessWidget {
                     0.5))
             .clamp(0, 1);
         return Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: theme.images.backgroundPattern,
-              fit: BoxFit.cover,
-              opacity: 0.025 + 0.175 * scrollAmount,
-            ),
-          ),
+          // decoration: BoxDecoration(
+          //   image: DecorationImage(
+          //     image: theme.images.backgroundPattern,
+          //     fit: BoxFit.cover,
+          //     opacity: 0.025 + 0.175 * scrollAmount,
+          //   ),
+          // ),
           child: child,
         );
       },
