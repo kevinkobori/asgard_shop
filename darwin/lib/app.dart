@@ -46,7 +46,7 @@ class DarwinApp extends StatelessWidget {
             create: (context) => AccountNotifier.demo(),
             child: DarwinAppBuilder(
               debugShowCheckedModeBanner: false,
-              colorMode: DarwinThemeColorMode.dark,
+              colorMode: DarwinThemeColorMode.light,
               appLogo: ExactAssetPicture(
                 SvgPicture.svgStringDecoderBuilder,
                 'assets/images/logo.svg',
