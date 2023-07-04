@@ -1,65 +1,65 @@
-import 'package:asgard_core/src/design_system/theme/theme.dart';
+import 'package:asgard_core/src/design/theme/asgard_theme.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 
-import 'gap.dart';
+import 'asgard_gap.dart';
 
 class AsgardEdgeInsets extends Equatable {
-  const AsgardEdgeInsets.all(AppGapSize value)
+  const AsgardEdgeInsets.all(AsgardGapSize value)
       : left = value,
         top = value,
         right = value,
         bottom = value;
 
   const AsgardEdgeInsets.symmetric({
-    AppGapSize vertical = AppGapSize.none,
-    AppGapSize horizontal = AppGapSize.none,
+    AsgardGapSize vertical = AsgardGapSize.none,
+    AsgardGapSize horizontal = AsgardGapSize.none,
   })  : left = horizontal,
         top = vertical,
         right = horizontal,
         bottom = vertical;
 
   const AsgardEdgeInsets.only({
-    this.left = AppGapSize.none,
-    this.top = AppGapSize.none,
-    this.right = AppGapSize.none,
-    this.bottom = AppGapSize.none,
+    this.left = AsgardGapSize.none,
+    this.top = AsgardGapSize.none,
+    this.right = AsgardGapSize.none,
+    this.bottom = AsgardGapSize.none,
   });
 
   const AsgardEdgeInsets.small()
-      : left = AppGapSize.small,
-        top = AppGapSize.small,
-        right = AppGapSize.small,
-        bottom = AppGapSize.small;
+      : left = AsgardGapSize.small,
+        top = AsgardGapSize.small,
+        right = AsgardGapSize.small,
+        bottom = AsgardGapSize.small;
 
   const AsgardEdgeInsets.semiSmall()
-      : left = AppGapSize.semiSmall,
-        top = AppGapSize.semiSmall,
-        right = AppGapSize.semiSmall,
-        bottom = AppGapSize.semiSmall;
+      : left = AsgardGapSize.semiSmall,
+        top = AsgardGapSize.semiSmall,
+        right = AsgardGapSize.semiSmall,
+        bottom = AsgardGapSize.semiSmall;
 
   const AsgardEdgeInsets.regular()
-      : left = AppGapSize.regular,
-        top = AppGapSize.regular,
-        right = AppGapSize.regular,
-        bottom = AppGapSize.regular;
+      : left = AsgardGapSize.regular,
+        top = AsgardGapSize.regular,
+        right = AsgardGapSize.regular,
+        bottom = AsgardGapSize.regular;
 
   const AsgardEdgeInsets.semiBig()
-      : left = AppGapSize.semiBig,
-        top = AppGapSize.semiBig,
-        right = AppGapSize.semiBig,
-        bottom = AppGapSize.semiBig;
+      : left = AsgardGapSize.semiBig,
+        top = AsgardGapSize.semiBig,
+        right = AsgardGapSize.semiBig,
+        bottom = AsgardGapSize.semiBig;
 
   const AsgardEdgeInsets.big()
-      : left = AppGapSize.big,
-        top = AppGapSize.big,
-        right = AppGapSize.big,
-        bottom = AppGapSize.big;
+      : left = AsgardGapSize.big,
+        top = AsgardGapSize.big,
+        right = AsgardGapSize.big,
+        bottom = AsgardGapSize.big;
 
-  final AppGapSize left;
-  final AppGapSize top;
-  final AppGapSize right;
-  final AppGapSize bottom;
+  final AsgardGapSize left;
+  final AsgardGapSize top;
+  final AsgardGapSize right;
+  final AsgardGapSize bottom;
 
   @override
   List<Object?> get props => [
@@ -82,38 +82,38 @@ class AsgardEdgeInsets extends Equatable {
 class AsgardPadding extends StatelessWidget {
   const AsgardPadding({
     Key? key,
-    this.padding = const AsgardEdgeInsets.all(AppGapSize.none),
+    this.padding = const AsgardEdgeInsets.all(AsgardGapSize.none),
     this.child,
   }) : super(key: key);
 
   const AsgardPadding.small({
     Key? key,
     this.child,
-  })  : padding = const AsgardEdgeInsets.all(AppGapSize.none),
+  })  : padding = const AsgardEdgeInsets.all(AsgardGapSize.none),
         super(key: key);
 
   const AsgardPadding.semiSmall({
     Key? key,
     this.child,
-  })  : padding = const AsgardEdgeInsets.all(AppGapSize.semiSmall),
+  })  : padding = const AsgardEdgeInsets.all(AsgardGapSize.semiSmall),
         super(key: key);
 
   const AsgardPadding.regular({
     Key? key,
     this.child,
-  })  : padding = const AsgardEdgeInsets.all(AppGapSize.regular),
+  })  : padding = const AsgardEdgeInsets.all(AsgardGapSize.regular),
         super(key: key);
 
   const AsgardPadding.semiBig({
     Key? key,
     this.child,
-  })  : padding = const AsgardEdgeInsets.all(AppGapSize.semiBig),
+  })  : padding = const AsgardEdgeInsets.all(AsgardGapSize.semiBig),
         super(key: key);
 
   const AsgardPadding.big({
     Key? key,
     this.child,
-  })  : padding = const AsgardEdgeInsets.all(AppGapSize.big),
+  })  : padding = const AsgardEdgeInsets.all(AsgardGapSize.big),
         super(key: key);
 
   final AsgardEdgeInsets padding;

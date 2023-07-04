@@ -1,4 +1,4 @@
-import 'package:asgard_core/src/design_system/utils/named.dart';
+import 'package:asgard_core/src/design/utils/named.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 

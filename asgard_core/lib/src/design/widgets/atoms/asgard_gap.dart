@@ -1,8 +1,8 @@
-import 'package:asgard_core/src/design_system/theme/theme.dart';
+import 'package:asgard_core/src/design/theme/asgard_theme.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 
-enum AppGapSize {
+enum AsgardGapSize {
   none,
   small,
   semiSmall,
@@ -11,20 +11,20 @@ enum AppGapSize {
   big,
 }
 
-extension AsgardGapSizeExtension on AppGapSize {
+extension AsgardGapSizeExtension on AsgardGapSize {
   double getSpacing(AsgardThemeData theme) {
     switch (this) {
-      case AppGapSize.none:
+      case AsgardGapSize.none:
         return 0;
-      case AppGapSize.small:
+      case AsgardGapSize.small:
         return theme.spacing.small;
-      case AppGapSize.semiSmall:
+      case AsgardGapSize.semiSmall:
         return theme.spacing.semiSmall;
-      case AppGapSize.regular:
+      case AsgardGapSize.regular:
         return theme.spacing.regular;
-      case AppGapSize.semiBig:
+      case AsgardGapSize.semiBig:
         return theme.spacing.semiBig;
-      case AppGapSize.big:
+      case AsgardGapSize.big:
         return theme.spacing.big;
     }
   }
@@ -38,30 +38,30 @@ class AsgardGap extends StatelessWidget {
 
   const AsgardGap.small({
     Key? key,
-  })  : size = AppGapSize.small,
+  })  : size = AsgardGapSize.small,
         super(key: key);
 
   const AsgardGap.semiSmall({
     Key? key,
-  })  : size = AppGapSize.semiSmall,
+  })  : size = AsgardGapSize.semiSmall,
         super(key: key);
 
   const AsgardGap.regular({
     Key? key,
-  })  : size = AppGapSize.regular,
+  })  : size = AsgardGapSize.regular,
         super(key: key);
 
   const AsgardGap.semiBig({
     Key? key,
-  })  : size = AppGapSize.semiBig,
+  })  : size = AsgardGapSize.semiBig,
         super(key: key);
 
   const AsgardGap.big({
     Key? key,
-  })  : size = AppGapSize.big,
+  })  : size = AsgardGapSize.big,
         super(key: key);
 
-  final AppGapSize size;
+  final AsgardGapSize size;
 
   @override
   Widget build(BuildContext context) {

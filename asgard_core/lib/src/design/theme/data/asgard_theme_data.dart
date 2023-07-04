@@ -3,16 +3,16 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-export 'colors.dart' show AsgardColorsData;
-export 'durations.dart' show AsgardDurationsData;
-export 'form_factor.dart' show AsgardFormFactor;
-export 'icons.dart'
+export 'asgard_colors_data.dart' show AsgardColorsData;
+export 'asgard_durations_data.dart' show AsgardDurationsData;
+export 'asgard_form_factor.dart' show AsgardFormFactor;
+export 'asgard_icons_data.dart'
     show AsgardIconsData, AsgardIconSizesData, AsgardIconCharactersData;
-export 'images.dart';
-export 'radius.dart' show AsgardRadiusData;
-export 'shadows.dart' show AsgardShadowsData;
-export 'spacing.dart' show AsgardSpacingData;
-export 'typography.dart';
+export 'asgard_images_data.dart';
+export 'asgard_radius_data.dart' show AsgardRadiusData;
+export 'asgard_shadows_data.dart' show AsgardShadowsData;
+export 'asgard_spacing_data.dart' show AsgardSpacingData;
+export 'asgard_typography_data.dart';
 
 class AsgardThemeData extends Equatable {
   const AsgardThemeData({

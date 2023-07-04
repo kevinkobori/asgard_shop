@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:asgard_core/src/design_system/utils/named.dart';
+import 'package:asgard_core/src/design/utils/named.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';

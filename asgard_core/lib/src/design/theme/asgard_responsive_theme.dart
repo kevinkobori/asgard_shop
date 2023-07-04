@@ -1,6 +1,6 @@
 import 'dart:ui' as ui;
 
-import 'package:asgard_core/src/design_system/theme/theme.dart';
+import 'package:asgard_core/src/design/theme/asgard_theme.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

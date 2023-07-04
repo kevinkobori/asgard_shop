@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 
-import 'data/data.dart';
+import 'data/asgard_theme_data.dart';
 
-export 'data/data.dart';
+export 'data/asgard_theme_data.dart';
 
 class AsgardTheme extends InheritedWidget {
   const AsgardTheme({

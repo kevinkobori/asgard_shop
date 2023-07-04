@@ -17,8 +17,8 @@ class PriceLabel extends StatelessWidget {
         borderRadius: theme.radius.asBorderRadius().regular,
       ),
       padding: const AsgardEdgeInsets.symmetric(
-        vertical: AppGapSize.semiSmall,
-        horizontal: AppGapSize.regular,
+        vertical: AsgardGapSize.semiSmall,
+        horizontal: AsgardGapSize.regular,
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,

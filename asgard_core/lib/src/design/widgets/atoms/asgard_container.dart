@@ -1,7 +1,7 @@
-import 'package:asgard_core/src/design_system/theme/theme.dart';
+import 'package:asgard_core/src/design/theme/asgard_theme.dart';
 import 'package:flutter/widgets.dart';
 
-import 'padding.dart';
+import 'asgard_padding.dart';
 
 class AsgardContainer extends StatelessWidget {
   const AsgardContainer({

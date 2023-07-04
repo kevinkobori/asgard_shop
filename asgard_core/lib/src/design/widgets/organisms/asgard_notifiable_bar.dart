@@ -161,7 +161,7 @@ class _NotificationBody extends StatelessWidget {
         Expanded(
           child: AsgardPadding(
             padding: const AsgardEdgeInsets.symmetric(
-              vertical: AppGapSize.regular,
+              vertical: AsgardGapSize.regular,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
