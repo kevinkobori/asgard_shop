@@ -1,0 +1,4 @@
+enum DarwinFormFactor {
+  small,
+  medium,
+}

@@ -1,0 +1,159 @@
+import 'package:darwin_core/_internal.dart';
+
+class DarwinNavigationBar extends StatelessWidget {
+  const DarwinNavigationBar({
+    Key? key,
+    required this.leading,
+    required this.body,
+    required this.summary,
+    this.canNavigateBack = false,
+    this.animation,
+    this.action,
+  }) : super(key: key);
+
+  final Animation<double>? animation;
+  final bool canNavigateBack;
+  final Widget leading;
+  final Widget body;
+  final Widget summary;
+  final Widget? action;
+
+  Widget _animatedBody(BuildContext context, Animation<double> animation) {
+    final leading = this.leading;
+    final summary = this.summary;
+    final action = this.action;
+    return Row(
+      children: [
+        if (!canNavigateBack) leading,
+        if (canNavigateBack)
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Positioned.fill(
+                child: FadeTransition(
+                  opacity: ReverseAnimation(animation),
+                  child: leading,
+                ),
+              ),
+              FadeTransition(
+                opacity: animation,
+                child: const DarwinBackButton(),
+              ),
+            ],
+          ),
+        const DarwinGap.regular(),
+        if (action == null) body,
+        if (action != null)
+          Expanded(
+            child: Stack(
+              alignment: Alignment.centerLeft,
+              children: [
+                FadeTransition(
+                  opacity: ReverseAnimation(animation),
+                  child: body,
+                ),
+                SlideTransition(
+                  position: Tween(
+                    begin: const Offset(1, 0),
+                    end: Offset.zero,
+                  ).animate(animation),
+                  child: FadeTransition(
+                    opacity: animation,
+                    child: summary,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        const DarwinGap.regular(),
+        if (action == null) summary,
+        if (action != null)
+          Stack(
+            alignment: Alignment.centerRight,
+            children: [
+              SlideTransition(
+                position: Tween(
+                  begin: const Offset(0, 0),
+                  end: const Offset(-1, 0),
+                ).animate(animation),
+                child: FadeTransition(
+                  opacity: ReverseAnimation(animation),
+                  child: summary,
+                ),
+              ),
+              FadeTransition(
+                opacity: animation,
+                child: action,
+              ),
+            ],
+          ),
+      ],
+    );
+  }
+
+  Widget _staticBody(BuildContext context) {
+    final leading = this.leading;
+    final summary = this.summary;
+    final action = this.action;
+    return Row(
+      children: [
+        Stack(
+          alignment: Alignment.center,
+          children: [
+            Positioned.fill(
+              child: leading,
+            ),
+            Opacity(
+              opacity: !canNavigateBack ? 0.0 : 1.0,
+              child: IgnorePointer(
+                ignoring: !canNavigateBack,
+                child: const DarwinBackButton(),
+              ),
+            ),
+          ],
+        ),
+        const DarwinGap.regular(),
+        if (canNavigateBack) Expanded(child: summary),
+        if (!canNavigateBack)
+          Expanded(
+            child: body,
+          ),
+        const DarwinGap.regular(),
+        if (!canNavigateBack) summary,
+        if (canNavigateBack && action != null) action,
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final animation = this.animation;
+    return NavigationBarContainer(
+      child: animation != null
+          ? _animatedBody(context, animation)
+          : _staticBody(context),
+    );
+  }
+}
+
+class NavigationBarContainer extends StatelessWidget {
+  const NavigationBarContainer({
+    Key? key,
+    required this.child,
+  }) : super(key: key);
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = DarwinTheme.of(context);
+    return DarwinContainer(
+      padding: const DarwinEdgeInsets.regular(),
+      decoration: BoxDecoration(
+        color: theme.colors.actionBarBackground,
+        borderRadius: theme.radius.asBorderRadius().regular,
+      ),
+      child: child,
+    );
+  }
+}

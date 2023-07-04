@@ -5,14 +5,14 @@ import 'package:flutter_test/flutter_test.dart';
 Future<void> loadTestFonts() async {
   TestWidgetsFlutterBinding.ensureInitialized();
   await _loadFamily(
-    'asgard_core',
-    'asgard_icons',
+    'darwin_core',
+    'darwin_icons',
     [
-      'fonts/asgard_icons.ttf',
+      'fonts/darwin_icons.ttf',
     ],
   );
   await _loadFamily(
-    'asgard_core',
+    'darwin_core',
     'Poppins',
     [
       'fonts/Poppins-Regular.ttf',

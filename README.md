@@ -1,4 +1,4 @@
-# asgard_shop
+# darwin_shop
 
 Materials for the talk given at Flutter Vikings 2022.
 
@@ -15,9 +15,9 @@ Documents :
 - Never import archives using path logic.
     - Example: 
         - import '../../src/theme/responsive_theme.dart';
-        - import 'package:asgard_core/src/theme/responsive_theme.dart';
+        - import 'package:darwin_core/src/theme/responsive_theme.dart';
     - Right way:
-        - import 'package:asgard_core/_internal.dart';
+        - import 'package:darwin_core/_internal.dart';
         
 ## Context Access all Design System properties and components
 - remove maximum layout controller from developer
