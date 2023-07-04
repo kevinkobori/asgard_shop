@@ -10,8 +10,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 // part 'scaffold.dart';
 
-class AsgardAppBuilder extends StatelessWidget {
-  const AsgardAppBuilder({
+class AsgardApp extends StatelessWidget {
+  const AsgardApp({
     Key? key,
     required this.routerDelegate,
     required this.routeInformationParser,

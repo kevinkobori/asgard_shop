@@ -1,5 +1,5 @@
-export '../../configuration/app_builder.dart' show AsgardAppBuilder;
-export '../../configuration/content_sheet.dart' show AsgardContentSheet;
+export '../../configuration/asgard_app.dart' show AsgardApp;
+export '../../configuration/asgard_content_sheet.dart' show AsgardContentSheet;
 export 'atoms/container.dart';
 export 'atoms/gap.dart';
 export 'atoms/icon.dart';

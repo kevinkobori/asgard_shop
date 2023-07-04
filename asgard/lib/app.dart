@@ -10,8 +10,8 @@ import 'base/state_provider.dart';
 import 'features/catalog/state.dart';
 import 'features/product_details/page.dart';
 
-class AsgardApp extends StatelessWidget {
-  AsgardApp({
+class App extends StatelessWidget {
+  App({
     Key? key,
   }) : super(key: key);
 
@@ -44,7 +44,7 @@ class AsgardApp extends StatelessWidget {
           create: (context) => CartNotifier.demo(),
           child: StateProvider<AccountState, AccountNotifier>(
             create: (context) => AccountNotifier.demo(),
-            child: AsgardAppBuilder(
+            child: AsgardApp(
               debugShowCheckedModeBanner: false,
               colorMode: AsgardThemeColorMode.dark,
               appLogo: ExactAssetPicture(
