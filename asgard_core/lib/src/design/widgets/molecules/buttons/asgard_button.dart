@@ -69,7 +69,7 @@ class AsgardButton extends StatelessWidget {
   }
 }
 
-enum AppButtonState {
+enum AsgardButtonState {
   disabled,
   inactive,
   hovered,
@@ -87,7 +87,7 @@ class AsgardButtonLayout extends StatelessWidget {
     this.hoveredBackgroundColor,
     this.pressedBackgroundColor,
     this.foregroundColor,
-  })  : _state = AppButtonState.disabled,
+  })  : _state = AsgardButtonState.disabled,
         assert(
           icon != null || title != null,
         ),
@@ -103,7 +103,7 @@ class AsgardButtonLayout extends StatelessWidget {
     this.hoveredBackgroundColor,
     this.pressedBackgroundColor,
     this.foregroundColor,
-  })  : _state = AppButtonState.inactive,
+  })  : _state = AsgardButtonState.inactive,
         assert(
           icon != null || title != null,
         ),
@@ -119,7 +119,7 @@ class AsgardButtonLayout extends StatelessWidget {
     this.hoveredBackgroundColor,
     this.pressedBackgroundColor,
     this.foregroundColor,
-  })  : _state = AppButtonState.hovered,
+  })  : _state = AsgardButtonState.hovered,
         assert(
           icon != null || title != null,
         ),
@@ -135,7 +135,7 @@ class AsgardButtonLayout extends StatelessWidget {
     this.hoveredBackgroundColor,
     this.pressedBackgroundColor,
     this.foregroundColor,
-  })  : _state = AppButtonState.pressed,
+  })  : _state = AsgardButtonState.pressed,
         assert(
           icon != null || title != null,
         ),
@@ -144,7 +144,7 @@ class AsgardButtonLayout extends StatelessWidget {
   final String? icon;
   final String? title;
   final MainAxisSize mainAxisSize;
-  final AppButtonState _state;
+  final AsgardButtonState _state;
   final Color? disabledBackgroundColor;
   final Color? inactiveBackgroundColor;
   final Color? hoveredBackgroundColor;
@@ -160,13 +160,13 @@ class AsgardButtonLayout extends StatelessWidget {
     final foregroundColor = this.foregroundColor ?? theme.colors.accentOpposite;
     final backgroundColor = () {
       switch (_state) {
-        case AppButtonState.disabled:
+        case AsgardButtonState.disabled:
           return disabledBackgroundColor ?? theme.colors.disabledColor;
-        case AppButtonState.inactive:
+        case AsgardButtonState.inactive:
           return inactiveBackgroundColor ?? theme.colors.accent;
-        case AppButtonState.hovered:
+        case AsgardButtonState.hovered:
           return hoveredBackgroundColor ?? theme.colors.accentHighlight;
-        case AppButtonState.pressed:
+        case AsgardButtonState.pressed:
           return pressedBackgroundColor ?? theme.colors.accentHighlight2;
       }
     }();

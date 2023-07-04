@@ -1,7 +1,7 @@
 import 'package:asgard_core/src/design/theme/asgard_theme.dart';
 import 'package:flutter/widgets.dart';
 
-enum AppTextLevel {
+enum AsgardTextLevel {
   paragraph1,
   paragraph2,
   title1,
@@ -16,7 +16,7 @@ class AsgardText extends StatelessWidget {
     this.color,
     this.fontSize,
     this.maxLines,
-    this.level = AppTextLevel.paragraph1,
+    this.level = AsgardTextLevel.paragraph1,
   }) : super(key: key);
 
   const AsgardText.paragraph1(
@@ -25,7 +25,7 @@ class AsgardText extends StatelessWidget {
     this.color,
     this.fontSize,
     this.maxLines,
-  })  : level = AppTextLevel.paragraph1,
+  })  : level = AsgardTextLevel.paragraph1,
         super(key: key);
 
   const AsgardText.paragraph2(
@@ -34,7 +34,7 @@ class AsgardText extends StatelessWidget {
     this.color,
     this.fontSize,
     this.maxLines,
-  })  : level = AppTextLevel.paragraph2,
+  })  : level = AsgardTextLevel.paragraph2,
         super(key: key);
 
   const AsgardText.title1(
@@ -43,7 +43,7 @@ class AsgardText extends StatelessWidget {
     this.color,
     this.fontSize,
     this.maxLines,
-  })  : level = AppTextLevel.title1,
+  })  : level = AsgardTextLevel.title1,
         super(key: key);
 
   const AsgardText.title2(
@@ -52,7 +52,7 @@ class AsgardText extends StatelessWidget {
     this.color,
     this.fontSize,
     this.maxLines,
-  })  : level = AppTextLevel.title2,
+  })  : level = AsgardTextLevel.title2,
         super(key: key);
 
   const AsgardText.title3(
@@ -61,11 +61,11 @@ class AsgardText extends StatelessWidget {
     this.color,
     this.fontSize,
     this.maxLines,
-  })  : level = AppTextLevel.title3,
+  })  : level = AsgardTextLevel.title3,
         super(key: key);
 
   final String data;
-  final AppTextLevel level;
+  final AsgardTextLevel level;
   final Color? color;
   final double? fontSize;
   final int? maxLines;
@@ -76,15 +76,15 @@ class AsgardText extends StatelessWidget {
     final color = this.color ?? theme.colors.foreground;
     final style = () {
       switch (level) {
-        case AppTextLevel.paragraph1:
+        case AsgardTextLevel.paragraph1:
           return theme.typography.paragraph1;
-        case AppTextLevel.paragraph2:
+        case AsgardTextLevel.paragraph2:
           return theme.typography.paragraph2;
-        case AppTextLevel.title1:
+        case AsgardTextLevel.title1:
           return theme.typography.title1;
-        case AppTextLevel.title2:
+        case AsgardTextLevel.title2:
           return theme.typography.title2;
-        case AppTextLevel.title3:
+        case AsgardTextLevel.title3:
           return theme.typography.title3;
       }
     }();

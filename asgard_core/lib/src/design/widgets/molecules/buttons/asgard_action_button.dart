@@ -42,50 +42,50 @@ class AsgardActionButtonLayout extends StatelessWidget {
   const AsgardActionButtonLayout.disabled({
     Key? key,
     required this.icon,
-  })  : _state = AppButtonState.disabled,
+  })  : _state = AsgardButtonState.disabled,
         super(key: key);
 
   const AsgardActionButtonLayout.inactive({
     Key? key,
     required this.icon,
-  })  : _state = AppButtonState.inactive,
+  })  : _state = AsgardButtonState.inactive,
         super(key: key);
 
   const AsgardActionButtonLayout.hovered({
     Key? key,
     required this.icon,
-  })  : _state = AppButtonState.hovered,
+  })  : _state = AsgardButtonState.hovered,
         super(key: key);
 
   const AsgardActionButtonLayout.pressed({
     Key? key,
     required this.icon,
-  })  : _state = AppButtonState.pressed,
+  })  : _state = AsgardButtonState.pressed,
         super(key: key);
 
   final String icon;
-  final AppButtonState _state;
+  final AsgardButtonState _state;
 
   @override
   Widget build(BuildContext context) {
     final theme = AsgardTheme.of(context);
     switch (_state) {
-      case AppButtonState.hovered:
+      case AsgardButtonState.hovered:
         return AsgardButtonLayout.hovered(
           icon: icon,
           hoveredBackgroundColor: theme.colors.accentOpposite.withOpacity(0.15),
         );
-      case AppButtonState.pressed:
+      case AsgardButtonState.pressed:
         return AsgardButtonLayout.pressed(
           icon: icon,
           pressedBackgroundColor: theme.colors.accentOpposite.withOpacity(0.20),
         );
-      case AppButtonState.inactive:
+      case AsgardButtonState.inactive:
         return AsgardButtonLayout.inactive(
           icon: icon,
           inactiveBackgroundColor: theme.colors.accentOpposite.withOpacity(0),
         );
-      case AppButtonState.disabled:
+      case AsgardButtonState.disabled:
         return AsgardButtonLayout.disabled(
           icon: icon,
           disabledBackgroundColor: theme.colors.disabledColor.withOpacity(1),
