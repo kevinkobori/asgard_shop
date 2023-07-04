@@ -1,20 +1,6 @@
 // part of asgard_app;
 import 'dart:math' as math;
 
-// final theme = AppTheme.of(context);
-// final product = context.select((ProductDetailState state) => state.product);
-
-// _AppScaffold(
-//   floatingBar: const ProductDetailNavigationBar(),
-//   backgroundColor: theme.colors.background.withAlpha(0),
-//   body: AppContentSheet(
-//     children: [
-//       if (product == null) const AppText.title2('Not found'),
-//       if (product != null) ..._buildBody(context, theme, product),
-//     ],
-//   ),
-// );
-
 import 'package:asgard_core/_internal.dart';
 
 class AsgardScaffold extends StatelessWidget {
