@@ -34,7 +34,7 @@ void testAppWidgets(
         material.MaterialApp(
           debugShowCheckedModeBanner: false,
           home: AsgardTheme(
-            data: AsgardThemeData.regular(
+            data: AsgardThemeData.standard(
               appLogo: StringPicture(
                 SvgPicture.svgStringDecoderBuilder,
                 '<svg></svg>',

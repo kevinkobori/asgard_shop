@@ -2,7 +2,20 @@ import 'package:flutter/widgets.dart';
 
 import 'data/asgard_theme_data.dart';
 
-export 'data/asgard_theme_data.dart';
+export 'data/asgard_theme_data.dart'
+    show
+        AsgardThemeData,
+        AsgardColorsData,
+        AsgardIconsData,
+        AsgardIconSizesData,
+        AsgardIconCharactersData,
+        AsgardTypographyData,
+        AsgardRadiusData,
+        AsgardSpacingData,
+        AsgardShadowsData,
+        AsgardDurationsData,
+        AsgardImagesData,
+        AsgardFormFactor;
 
 class AsgardTheme extends InheritedWidget {
   const AsgardTheme({

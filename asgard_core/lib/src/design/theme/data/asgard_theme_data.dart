@@ -1,18 +1,21 @@
+library darwin_theme_data;
+
 import 'package:asgard_core/_internal.dart';
+import 'package:asgard_core/src/design/utils/named.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-export 'asgard_colors_data.dart' show AsgardColorsData;
-export 'asgard_durations_data.dart' show AsgardDurationsData;
-export 'asgard_form_factor.dart' show AsgardFormFactor;
-export 'asgard_icons_data.dart'
-    show AsgardIconsData, AsgardIconSizesData, AsgardIconCharactersData;
-export 'asgard_images_data.dart';
-export 'asgard_radius_data.dart' show AsgardRadiusData;
-export 'asgard_shadows_data.dart' show AsgardShadowsData;
-export 'asgard_spacing_data.dart' show AsgardSpacingData;
-export 'asgard_typography_data.dart';
+part 'asgard_colors_data.dart';
+part 'asgard_durations_data.dart';
+part 'asgard_form_factor.dart';
+part 'asgard_icons_data.dart';
+part 'asgard_images_data.dart';
+part 'asgard_radius_data.dart';
+part 'asgard_shadows_data.dart';
+part 'asgard_spacing_data.dart';
+part 'asgard_typography_data.dart';
 
 class AsgardThemeData extends Equatable {
   const AsgardThemeData({
@@ -28,19 +31,19 @@ class AsgardThemeData extends Equatable {
     TargetPlatform? platform,
   }) : _platform = platform;
 
-  factory AsgardThemeData.regular({
+  factory AsgardThemeData.standard({
     required PictureProvider appLogo,
   }) =>
       AsgardThemeData(
         formFactor: AsgardFormFactor.medium,
-        icons: AsgardIconsData.standard(),
-        typography: AsgardTypographyData.standard(),
-        colors: AsgardColorsData.light(),
-        radius: const AsgardRadiusData.standard(),
-        spacing: AsgardSpacingData.standard(),
-        shadow: AsgardShadowsData.standard(),
-        durations: AsgardDurationsData.standard(),
-        images: AsgardImagesData.regular(
+        icons: AsgardIconsData._standard(),
+        typography: AsgardTypographyData._standard(),
+        colors: AsgardColorsData._light(),
+        radius: const AsgardRadiusData._standard(),
+        spacing: AsgardSpacingData._standard(),
+        shadow: AsgardShadowsData._standard(),
+        durations: AsgardDurationsData._standard(),
+        images: AsgardImagesData._standard(
           appLogo: appLogo,
         ),
       );

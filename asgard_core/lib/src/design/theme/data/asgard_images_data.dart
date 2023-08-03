@@ -1,9 +1,4 @@
-import 'dart:typed_data';
-
-import 'package:asgard_core/src/design/utils/named.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+part of darwin_theme_data;
 
 class AsgardImagesData extends Equatable {
   const AsgardImagesData({
@@ -11,7 +6,7 @@ class AsgardImagesData extends Equatable {
     required this.backgroundPattern,
   });
 
-  factory AsgardImagesData.regular({required PictureProvider appLogo}) =>
+  factory AsgardImagesData._standard({required PictureProvider appLogo}) =>
       AsgardImagesData(
         appLogo: appLogo,
         backgroundPattern: const AssetImage(

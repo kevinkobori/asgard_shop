@@ -1,11 +1,9 @@
-import 'package:asgard_core/src/design/utils/named.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter/rendering.dart';
+part of darwin_theme_data;
 
 class AsgardShadowsData extends Equatable {
   const AsgardShadowsData({required this.big});
 
-  factory AsgardShadowsData.standard() => const AsgardShadowsData(
+  factory AsgardShadowsData._standard() => const AsgardShadowsData(
         big: BoxShadow(
           blurRadius: 32,
           color: Color(0x44000000),

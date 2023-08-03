@@ -1,5 +1,4 @@
-import 'package:asgard_core/src/design/utils/named.dart';
-import 'package:equatable/equatable.dart';
+part of darwin_theme_data;
 
 class AsgardDurationsData extends Equatable {
   const AsgardDurationsData({
@@ -8,7 +7,7 @@ class AsgardDurationsData extends Equatable {
     required this.quick,
   });
 
-  factory AsgardDurationsData.standard() => const AsgardDurationsData(
+  factory AsgardDurationsData._standard() => const AsgardDurationsData(
         areAnimationEnabled: true,
         regular: Duration(milliseconds: 250),
         quick: Duration(milliseconds: 100),

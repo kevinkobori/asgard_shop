@@ -7,15 +7,16 @@ enum AsgardIconSize {
   big,
 }
 
-extension AsgardIconSizeExtension on AsgardIconSizesData {
-  double resolve(AsgardIconSize size) {
-    switch (size) {
+extension AsgardIconSizeExtension on AsgardIconSize {
+  double resolve(AsgardThemeData theme) {
+    final sizes = theme.icons.sizes;
+    switch (this) {
       case AsgardIconSize.small:
-        return small;
+        return sizes.small;
       case AsgardIconSize.regular:
-        return regular;
+        return sizes.regular;
       case AsgardIconSize.big:
-        return big;
+        return sizes.big;
     }
   }
 }
@@ -63,7 +64,7 @@ class AsgardIcon extends StatelessWidget {
         fontFamily: theme.icons.fontFamily,
         package: theme.icons.fontPackage,
         color: color,
-        fontSize: theme.icons.sizes.resolve(size),
+        fontSize: size.resolve(theme),
         decoration: TextDecoration.none,
       ),
     );
@@ -106,7 +107,7 @@ class AsgardAnimatedIcon extends StatelessWidget {
         fontFamily: theme.icons.fontFamily,
         package: theme.icons.fontPackage,
         color: color,
-        fontSize: theme.icons.sizes.resolve(size),
+        fontSize: size.resolve(theme),
         decoration: TextDecoration.none,
       ),
       duration: duration,

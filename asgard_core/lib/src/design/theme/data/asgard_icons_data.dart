@@ -1,5 +1,4 @@
-import 'package:asgard_core/src/design/utils/named.dart';
-import 'package:equatable/equatable.dart';
+part of darwin_theme_data;
 
 class AsgardIconsData extends Equatable {
   const AsgardIconsData({
@@ -10,7 +9,7 @@ class AsgardIconsData extends Equatable {
   });
 
   /// Icons have been exported with "Export Icon Font" Figma plugin.
-  factory AsgardIconsData.standard() => AsgardIconsData(
+  factory AsgardIconsData._standard() => AsgardIconsData(
         fontFamily: 'asgard_icons',
         fontPackage: 'asgard_core',
         characters: AsgardIconCharactersData.standard(),

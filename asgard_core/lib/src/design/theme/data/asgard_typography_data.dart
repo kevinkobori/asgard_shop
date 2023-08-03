@@ -1,6 +1,4 @@
-import 'package:asgard_core/src/design/utils/named.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter/rendering.dart';
+part of darwin_theme_data;
 
 class AsgardTypographyData extends Equatable {
   const AsgardTypographyData({
@@ -11,7 +9,7 @@ class AsgardTypographyData extends Equatable {
     required this.title3,
   });
 
-  factory AsgardTypographyData.standard() => const AsgardTypographyData(
+  factory AsgardTypographyData._standard() => const AsgardTypographyData(
         paragraph1: TextStyle(
           fontFamily: 'Poppins',
           package: 'asgard_core',

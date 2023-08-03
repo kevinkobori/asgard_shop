@@ -1,6 +1,4 @@
-import 'package:asgard_core/src/design/utils/named.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter/widgets.dart';
+part of darwin_theme_data;
 
 class AsgardSpacingData extends Equatable {
   const AsgardSpacingData({
@@ -11,7 +9,7 @@ class AsgardSpacingData extends Equatable {
     required this.big,
   });
 
-  factory AsgardSpacingData.standard() => const AsgardSpacingData(
+  factory AsgardSpacingData._standard() => const AsgardSpacingData(
         small: 4,
         semiSmall: 8,
         regular: 12,

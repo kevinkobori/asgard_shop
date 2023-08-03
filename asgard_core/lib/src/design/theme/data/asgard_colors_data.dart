@@ -1,17 +1,14 @@
-import 'package:asgard_core/src/design/utils/named.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter/rendering.dart';
+part of darwin_theme_data;
 
-/// https://www.color-name.com/
-class PaleteColors {
+class _PaleteColors {
   static const Color black = Color(0xFF000000);
   static const Color bluePigment = Color(0xFF272C9A);
-  static const Color chineseBlack = Color(0xFF111111);
+  // static const Color chineseBlack = Color(0xFF111111);
   static const Color chineseSilver = Color(0xFFC3C3C3);
   static const Color gainsboro = Color(0xFFDDDDDD);
   static const Color persianBlue = Color(0xFF2D33B9);
   static const Color raisinBlack = Color(0xFF222222);
-  static const Color asd = Color(0xFF454CFF);
+  // static const Color asd = Color(0xFF454CFF);
   static const Color white = Color(0xFFffffff);
   static const Color teslaRed = Color(0xFFE31937);
 }
@@ -29,40 +26,40 @@ class AsgardColorsData extends Equatable {
     required this.disabledColor,
   });
 
-  factory AsgardColorsData.light() => const AsgardColorsData(
-        accent: PaleteColors.teslaRed,
-        accentOpposite: PaleteColors.white,
-        accentHighlight: PaleteColors.persianBlue,
-        accentHighlight2: PaleteColors.bluePigment,
-        foreground: PaleteColors.black,
-        background: PaleteColors.gainsboro,
-        actionBarBackground: PaleteColors.black,
-        actionBarForeground: PaleteColors.white,
-        disabledColor: PaleteColors.chineseSilver,
+  factory AsgardColorsData._light() => const AsgardColorsData(
+        accent: _PaleteColors.teslaRed,
+        accentOpposite: _PaleteColors.white,
+        accentHighlight: _PaleteColors.persianBlue,
+        accentHighlight2: _PaleteColors.bluePigment,
+        foreground: _PaleteColors.black,
+        background: _PaleteColors.gainsboro,
+        actionBarBackground: _PaleteColors.black,
+        actionBarForeground: _PaleteColors.white,
+        disabledColor: _PaleteColors.chineseSilver,
       );
 
   factory AsgardColorsData.dark() => const AsgardColorsData(
-        accent: PaleteColors.teslaRed,
-        accentOpposite: PaleteColors.white,
-        accentHighlight: PaleteColors.persianBlue,
-        accentHighlight2: PaleteColors.bluePigment,
-        foreground: PaleteColors.white,
-        background: PaleteColors.gainsboro,
-        actionBarBackground: PaleteColors.black,
-        actionBarForeground: PaleteColors.white,
-        disabledColor: PaleteColors.chineseSilver,
+        accent: _PaleteColors.teslaRed,
+        accentOpposite: _PaleteColors.white,
+        accentHighlight: _PaleteColors.persianBlue,
+        accentHighlight2: _PaleteColors.bluePigment,
+        foreground: _PaleteColors.white,
+        background: _PaleteColors.gainsboro,
+        actionBarBackground: _PaleteColors.black,
+        actionBarForeground: _PaleteColors.white,
+        disabledColor: _PaleteColors.chineseSilver,
       );
 
   factory AsgardColorsData.highContrast() => const AsgardColorsData(
-        accent: PaleteColors.black,
-        accentOpposite: PaleteColors.white,
-        accentHighlight: PaleteColors.black,
-        accentHighlight2: PaleteColors.black,
-        foreground: PaleteColors.raisinBlack,
-        background: PaleteColors.white,
-        actionBarBackground: PaleteColors.gainsboro,
-        actionBarForeground: PaleteColors.raisinBlack,
-        disabledColor: PaleteColors.chineseSilver,
+        accent: _PaleteColors.black,
+        accentOpposite: _PaleteColors.white,
+        accentHighlight: _PaleteColors.black,
+        accentHighlight2: _PaleteColors.black,
+        foreground: _PaleteColors.raisinBlack,
+        background: _PaleteColors.white,
+        actionBarBackground: _PaleteColors.gainsboro,
+        actionBarForeground: _PaleteColors.raisinBlack,
+        disabledColor: _PaleteColors.chineseSilver,
       );
 
   final Color accent;

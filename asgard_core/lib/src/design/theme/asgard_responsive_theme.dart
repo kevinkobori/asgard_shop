@@ -54,7 +54,7 @@ class AsgardResponsiveTheme extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var theme = AsgardThemeData.regular(appLogo: appLogo);
+    var theme = AsgardThemeData.standard(appLogo: appLogo);
 
     /// Updating the colors for the current brightness
     final colorMode = this.colorMode ?? colorModeOf(context);

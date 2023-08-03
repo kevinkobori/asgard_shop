@@ -1,5 +1,4 @@
 import 'package:asgard/features/cart/state.dart';
-// import 'package:asgard_core/src/theme/data/atoms/atoms2.dart';
 import 'package:asgard_core/asgard_core.dart';
 import 'package:provider/provider.dart';
 

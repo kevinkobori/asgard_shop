@@ -1,6 +1,4 @@
-import 'package:asgard_core/src/design/utils/named.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter/rendering.dart';
+part of darwin_theme_data;
 
 class AsgardRadiusData extends Equatable {
   const AsgardRadiusData({
@@ -9,7 +7,7 @@ class AsgardRadiusData extends Equatable {
     required this.big,
   });
 
-  const AsgardRadiusData.standard()
+  const AsgardRadiusData._standard()
       : small = const Radius.circular(10),
         regular = const Radius.circular(12),
         big = const Radius.circular(16);
